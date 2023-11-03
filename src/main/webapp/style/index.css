@@ -1,0 +1,36 @@
+
+
+main {
+    background-color: #fff;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.product, .offer {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.product img, .offer img {
+    max-width: 100%;
+}
+
+.price {
+    font-weight: bold;
+    color: #f00;
+}
+
+.discount-price {
+    color: #f00;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+}

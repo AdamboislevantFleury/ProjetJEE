@@ -1,26 +1,17 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style/styles.css">
+  <link rel="stylesheet" href="style/index.css">
   <title>Accueil - Ma Boutique en Ligne</title>
 </head>
+
 <body>
-<header>
-  <div class="container">
-    <h1>Ma Boutique en Ligne</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#">Produits</a></li>
-        <li><a href="#">Promotions</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<jsp:include page="header.jsp" />
 
 <main>
   <div class="container">
@@ -66,10 +57,6 @@
   </div>
 </main>
 
-<footer>
-  <div class="container">
-    <p>&copy; 2023 Ma Boutique en Ligne</p>
-  </div>
-</footer>
+<jsp:include page="footer.jsp" />
 </body>
 </html>

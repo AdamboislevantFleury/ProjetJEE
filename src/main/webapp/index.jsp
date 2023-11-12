@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/styles.css">
   <link rel="stylesheet" href="style/index.css">
-  <title>Accueil - Ma Boutique en Ligne</title>
+  <title>League of Champs</title>
 </head>
 
 <body>
@@ -18,14 +18,14 @@
     <section id="featured-products">
       <h2>Produits en Vedette</h2>
       <div class="product">
-        <img src="product1.jpg" alt="Produit 1">
+        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/1.png" alt="Produit 1">
         <h3>Nom du Produit 1</h3>
         <p>Description du produit 1.</p>
         <span class="price">$19.99</span>
         <a href="#">Acheter</a>
       </div>
       <div class="product">
-        <img src="product2.jpg" alt="Produit 2">
+        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/2.png" alt="Produit 2">
         <h3>Nom du Produit 2</h3>
         <p>Description du produit 2.</p>
         <span class="price">$29.99</span>

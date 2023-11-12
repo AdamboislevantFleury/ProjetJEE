@@ -3,7 +3,7 @@
     <title>header</title>
 </head>
 <header>
-    <h1>Ma Boutique en Ligne</h1>
+    <h1><a href="#">LEAGUE OF CHAMPS</a></h1>
     <nav>
         <ul>
             <li><a href="#">Accueil</a></li>

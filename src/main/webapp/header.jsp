@@ -8,7 +8,7 @@
     <nav>
         <ul>
             <li><a href="index.jsp">Accueil</a></li>
-            <li><a href="produit.jsp">Produits</a></li>
+            <li><a href="produit">Produits</a></li>
             <li><a href="#">Promotions</a></li>
             <li><a href="#">Contact</a></li>
         </ul>

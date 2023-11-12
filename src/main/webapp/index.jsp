@@ -5,7 +5,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style/styles.css">
   <link rel="stylesheet" href="style/index.css">
   <title>League of Champs</title>
 </head>
@@ -29,7 +28,7 @@
         <h3>Nom du Produit 2</h3>
         <p>Description du produit 2.</p>
         <span class="price">$29.99</span>
-        <a href="#">Acheter</a>
+        <a href="page-article?champName=Annie">Acheter</a>
       </div>
       <!-- Ajoutez plus de produits ici -->
     </section>

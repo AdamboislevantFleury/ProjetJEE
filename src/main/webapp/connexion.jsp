@@ -11,14 +11,14 @@
 
 <main>
     <h2>Connexion</h2>
-    <form action="" method="post">
+    <form action="login" method="post">
         <label for="email">Adresse e-mail</label>
         <input type="text" id="email" name="email" required>
 
         <label for="password">Mot de passe</label>
         <input type="password" id="password" name="password" required>
 
-        <button type="submit">Se connecter</button>
+        <input type="submit" value="Se connecter">
     </form>
 </main>
 

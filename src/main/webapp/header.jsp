@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>header</title>
+    <link rel="stylesheet" href="style/styles.css">
 </head>
 <header>
     <h1><a href="#">LEAGUE OF CHAMPS</a></h1>

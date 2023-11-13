@@ -15,6 +15,9 @@
     </nav>
     <div class="user-actions">
         <a href="./profil.jsp">Profil</a>
+        <%if(session.getAttribute("logged") != "true")out.println("<a href='./connexion.jsp'>Se connecter</a>'true'");
+        else out.println("<a href='./deconnexion.jsp'>Se déconnecter</a>'true'");
+        %>
         <a href="./connexion.jsp">Se connecter</a>
     </div>
 </header>

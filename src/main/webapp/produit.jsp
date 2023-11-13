@@ -13,34 +13,38 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="style/index.css">
 </head>
 <body>
 <jsp:include page="header.jsp" />
 
-<div class="product">
-    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/1.png" alt="Produit 1">
-    <h3>Nom du Produit 1</h3>
-    <p>Description du produit 1.</p>
-    <span class="price">$19.99</span>
-    <a href="#">Acheter</a>
-</div>
-
+<main>
 <div class="container">
 <%
 
     //retrieve the list of champions as json from response payload
     String champions = (String) response.getHeader("champions");
     //parse the json
-    JSONObject json = new JSONObject(champions);
+    JSONObject championList = new JSONObject(champions);
+
+
     //print each key and value
-    for (String key : json.keySet()) {
+    for (String key : championList.keySet()) {
+
+        JSONObject championData = championList.getJSONObject(key);
+
         out.println("<div class='product'>");
-        out.print("<img src='https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/1.png' alt='Produit 1'>");
+        out.print("<img src="+championData.getString("image_url")+" alt='Produit 1'>");
         out.print("<h3>"+key+"</h3>");
+        out.print("<p>"+championData.getString("description")+"</p>");
+        out.print("<span class='price'>"+championData.getString("prix")+"</span>");
+        out.print("<a href='page-article?champName="+championData.getString("name")+"'>Acheter</a>");
         out.println("</div>");
+
     }
 %>
 </div>
+</main>
 <jsp:include page="footer.jsp" />
 </body>
 </html>

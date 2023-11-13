@@ -15,11 +15,11 @@ import java.sql.SQLException;
 
 @WebServlet(name = "produitServlet", value = "/produit")
 public class produitServlet extends HttpServlet {
-
-    private String url = "jdbc:postgresql://db.cvtaxdfnhdyuhqzaxrmk.supabase.co:5432/champions";
-    private String user = "postgres";
-    private String password = "U2xj7ROoI669A2bq";
-
+    private String mysqlDriver = "com.mysql.cj.jdbc.Driver";
+    private String url = "jdbc:mysql://i1i7nk6d2r6ujwjh:gcmjbobuqrl61m0z@i54jns50s3z6gbjt.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/aemu3k287ijuu5wv";
+    private String user = "i1i7nk6d2r6ujwjh";
+    private String password = "gcmjbobuqrl61m0z";
+    private String database = "aemu3k287ijuu5wv";
 
     public produitServlet() {
         super();
@@ -29,36 +29,44 @@ public class produitServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("produitServlet doGet");
 
+        int pageID = req.getParameter("pageID") != null ? Integer.parseInt(req.getParameter("pageID")) : 1;
+
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection connection = DriverManager.getConnection(url, user, password);
+            Class.forName(mysqlDriver);
+            Connection connection = DriverManager.getConnection(url);
 
             System.out.println("Connected to PostgreSQL database!");
 
+            //select all rows in the table and print them
+            String sql = "SELECT * FROM " + database + ".champions LIMIT 10 OFFSET " + (pageID - 1) * 10;
+            java.sql.Statement statement = connection.createStatement();
+            java.sql.ResultSet resultSet = statement.executeQuery(sql);
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
+            //if result is not null
+            JSONObject championsList = new JSONObject();
+            while (resultSet.next()) {
+
+                JSONObject championData = new JSONObject();
+                championData.put("name", resultSet.getString("name"));
+                championData.put("role", resultSet.getString("role"));
+                championData.put("description", resultSet.getString("description"));
+                championData.put("image_url", resultSet.getString("image_url"));
+                championData.put("prix", resultSet.getString("prix"));
+                championData.put("titre", resultSet.getString("titre"));
+                championData.put("lane", resultSet.getString("lane"));
+
+                championsList.put(resultSet.getString("name"), championData);
+
+            }
+
+            resp.setHeader("champions", championsList.toString());
+
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
 
-
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("ashe", "ashe");
-        jsonObject.put("ahri", "ahri");
-        jsonObject.put("trundle", "trundle");
-        jsonObject.put("katarina", "katarina");
-        jsonObject.put("garen", "garen");
-        jsonObject.put("lux", "lux");
-        jsonObject.put("zed", "zed");
-        jsonObject.put("yasuo", "yasuo");
-        jsonObject.put("jinx", "jinx");
-        jsonObject.put("senna", "senna");
-
-
-        resp.setHeader("champions", jsonObject.toString());
-
         req.getRequestDispatcher("produit.jsp").forward(req, resp);
+        System.out.println("produitServlet doGet end");
         super.doGet(req, resp);
 
     }

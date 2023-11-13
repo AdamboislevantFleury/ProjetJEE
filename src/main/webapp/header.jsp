@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>header</title>
@@ -15,10 +16,9 @@
     </nav>
     <div class="user-actions">
         <a href="./profil.jsp">Profil</a>
-        <%if(session.getAttribute("logged") != "true")out.println("<a href='./connexion.jsp'>Se connecter</a>'true'");
-        else out.println("<a href='./deconnexion.jsp'>Se déconnecter</a>'true'");
+        <%if(session.getAttribute("logged") != "true") out.print("<a href='./connexion.jsp'>Se connecter</a>");
+        else out.println("<a href='./login'>Se déconnecter</a>");
         %>
-        <a href="./connexion.jsp">Se connecter</a>
     </div>
 </header>
 </html>

@@ -38,7 +38,7 @@
         out.print("<h3>"+key+"</h3>");
         out.print("<p>"+championData.getString("description")+"</p>");
         out.print("<span class='price'>"+championData.getString("prix")+"</span>");
-        out.print("<a href='page-article?champName="+championData.getString("name")+"'>Acheter</a>");
+        out.print("<a href='page-article?champName="+championData.getString("name")+"&background_url="+championData.getString("image_url")+"'>Acheter</a>");
         out.println("</div>");
 
     }

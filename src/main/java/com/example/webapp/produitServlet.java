@@ -15,11 +15,6 @@ import java.sql.SQLException;
 
 @WebServlet(name = "produitServlet", value = "/produit")
 public class produitServlet extends HttpServlet {
-    private String mysqlDriver = "com.mysql.cj.jdbc.Driver";
-    private String url = "jdbc:mysql://i1i7nk6d2r6ujwjh:gcmjbobuqrl61m0z@i54jns50s3z6gbjt.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/aemu3k287ijuu5wv";
-    private String user = "i1i7nk6d2r6ujwjh";
-    private String password = "gcmjbobuqrl61m0z";
-    private String database = "aemu3k287ijuu5wv";
 
     public produitServlet() {
         super();
@@ -32,15 +27,14 @@ public class produitServlet extends HttpServlet {
         int pageID = req.getParameter("pageID") != null ? Integer.parseInt(req.getParameter("pageID")) : 1;
 
         try {
-            Class.forName(mysqlDriver);
-            Connection connection = DriverManager.getConnection(url);
+            DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
+
 
             System.out.println("Connected to PostgreSQL database!");
 
             //select all rows in the table and print them
-            String sql = "SELECT * FROM " + database + ".champions LIMIT 10 OFFSET " + (pageID - 1) * 10;
-            java.sql.Statement statement = connection.createStatement();
-            java.sql.ResultSet resultSet = statement.executeQuery(sql);
+            String sql = "SELECT * FROM " + databaseUtils.getDatabase() + ".champions LIMIT 10 OFFSET " + (pageID - 1) * 10;
+            java.sql.ResultSet resultSet = databaseUtils.sendQuery(sql);
 
             //if result is not null
             JSONObject championsList = new JSONObject();
@@ -61,7 +55,7 @@ public class produitServlet extends HttpServlet {
 
             resp.setHeader("champions", championsList.toString());
 
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 

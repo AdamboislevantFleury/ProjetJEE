@@ -1,10 +1,8 @@
 
 
 main {
-    background-color: #fff;
     padding: 20px;
     background-image: url(https://images2.alphacoders.com/913/913622.jpg);
-    background-size:cover;
 }
 
 h2 {
@@ -35,4 +33,28 @@ h2 {
 .original-price {
     text-decoration: line-through;
     color: #999;
+}
+
+.product-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.product {
+    flex: 0 0 300px;
+    margin-right: 20px;
+    scroll-snap-align: start;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product img {
+    max-width: 100%;
+}
+
+.product:hover {
+    transform: scale(1.05);
 }

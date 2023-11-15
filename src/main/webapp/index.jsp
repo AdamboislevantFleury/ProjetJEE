@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,21 +15,44 @@
   <div class="container">
     <section id="featured-products">
       <h2>Produits en Vedette</h2>
-      <div class="product">
-        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/1.png" alt="Produit 1">
-        <h3>Nom du Produit 1</h3>
-        <p>Description du produit 1.</p>
-        <span class="price">$19.99</span>
-        <a href="#">Acheter</a>
+      <div class="product-carousel">
+        <div class="product">
+          <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/429.png" alt="Produit 1">
+          <h3>Nom du Produit 1</h3>
+          <p>Description du produit 1.</p>
+          <span class="price">$19.99</span>
+          <a href="#">Acheter</a>
+        </div>
+        <div class="product">
+          <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/1.png" alt="Produit 2">
+          <h3>Nom du Produit 2</h3>
+          <p>Description du produit 2.</p>
+          <span class="price">$29.99</span>
+          <a href="page-article?champName=Annie">Acheter</a>
+        </div>
+        <div class="product">
+          <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/2.png" alt="Produit 3">
+          <h3>Nom du Produit 2</h3>
+          <p>Description du produit 2.</p>
+          <span class="price">$29.99</span>
+          <a href="page-article?champName=Annie">Acheter</a>
+        </div>
+        <div class="product">
+          <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/3.png" alt="Produit 4">
+          <h3>Nom du Produit 2</h3>
+          <p>Description du produit 2.</p>
+          <span class="price">$29.99</span>
+          <a href="page-article?champName=Annie">Acheter</a>
+        </div>
+        <div class="product">
+          <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/4.png" alt="Produit 5">
+          <h3>Nom du Produit 2</h3>
+          <p>Description du produit 2.</p>
+          <span class="price">$29.99</span>
+          <a href="page-article?champName=Annie">Acheter</a>
+        </div>
+        <!-- Add more product items as needed -->
       </div>
-      <div class="product">
-        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/2.png" alt="Produit 2">
-        <h3>Nom du Produit 2</h3>
-        <p>Description du produit 2.</p>
-        <span class="price">$29.99</span>
-        <a href="page-article?champName=Annie">Acheter</a>
-      </div>
-      <!-- Ajoutez plus de produits ici -->
     </section>
 
     <section id="special-offers">
@@ -41,6 +63,22 @@
         <p>Description de l'offre spéciale 1.</p>
         <span class="discount-price">$14.99</span>
         <span class="original-price">$19.99</span>
+        <a href="#">Détails</a>
+      </div>
+      <div class="offer">
+        <img src="offer2.jpg" alt="Offre 2">
+        <h3>Offre Spéciale 2</h3>
+        <p>Description de l'offre spéciale 2.</p>
+        <span class="discount-price">$24.99</span>
+        <span class="original-price">$29.99</span>
+        <a href="#">Détails</a>
+      </div>
+      <div class="offer">
+        <img src="offer2.jpg" alt="Offre 2">
+        <h3>Offre Spéciale 2</h3>
+        <p>Description de l'offre spéciale 2.</p>
+        <span class="discount-price">$24.99</span>
+        <span class="original-price">$29.99</span>
         <a href="#">Détails</a>
       </div>
       <div class="offer">

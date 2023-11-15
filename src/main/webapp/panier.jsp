@@ -12,25 +12,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
-    <link rel="stylesheet" href="style/index.css">
+  <title>Title</title>
+  <link rel="stylesheet" href="style/index.css">
 </head>
 <body>
 <jsp:include page="header.jsp" />
 
 <main>
-<div class="container">
+  <div class="container">
 
-<%
+    <%
 
-    //retrieve the list of champions as json from response payload
-    String champions = (String) response.getHeader("champions");
-    //parse the json
-    JSONObject championList = new JSONObject(champions);
+      //retrieve the list of champions as json from response payload
+      String champions = (String) response.getHeader("panier");
+      //parse the json
+      JSONObject championList = new JSONObject(champions);
 
 
-    //print each key and value
-    for (String key : championList.keySet()) {
+      //print each key and value
+      for (String key : championList.keySet()) {
 
         JSONObject championData = championList.getJSONObject(key);
 
@@ -42,9 +42,9 @@
         out.print("<a href='page-article?champName="+championData.getString("name")+"&background_url="+championData.getString("image_url")+"'>Acheter</a>");
         out.println("</div>");
 
-    }
-%>
-</div>
+      }
+    %>
+  </div>
 </main>
 <jsp:include page="footer.jsp" />
 </body>

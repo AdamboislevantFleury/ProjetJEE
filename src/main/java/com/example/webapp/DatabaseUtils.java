@@ -42,13 +42,14 @@ public class DatabaseUtils {
         return connection;
     }
 
-    public ResultSet sendQuery(String query) {
+
+    public ResultSet sendQuery(String query) throws SQLException{
 
         if(connection == null) getConnection();
 
         try {
             java.sql.Statement statement = connection.createStatement();
-            statement.executeQuery(query);
+            statement.execute(query);
             return statement.getResultSet();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -19,22 +19,35 @@ public class LoginServlet extends HttpServlet {
     }
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        System.out.println("LoginServlet doGet");
+
+        req.getSession().setAttribute("logged", "false");
+        req.getRequestDispatcher("/index.jsp").forward(req, resp);
+
+        super.doGet(req, resp);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("LoginServlet doPost");
+        DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
+
         String username = req.getParameter("email");
         String password = req.getParameter("password");
 
-        DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
         String sql = "SELECT * FROM " + databaseUtils.getDatabase() + ".user WHERE email = '" + username + "' AND password = '" + password + "'";
-        ResultSet resultSet = databaseUtils.sendQuery(sql);
-
-        System.out.println(resultSet.toString());
-
+        ResultSet resultSet = null;
         try {
-            if(resultSet != null && !resultSet.next()) {
+            resultSet = databaseUtils.sendQuery(sql);
+
+            if (resultSet.next()) {
+                req.getSession().setAttribute("logged", "true");
                 req.getRequestDispatcher("/index.jsp").forward(req, resp);
             } else {
-                req.getRequestDispatcher("/login.jsp").forward(req, resp);
+                req.getSession().setAttribute("logged", "false");
+                req.getRequestDispatcher("/connexion.jsp").forward(req, resp);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: wanto
+  Date: 13/11/2023
+  Time: 16:14
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,17 +19,22 @@
 
 <main>
     <h2>Connexion</h2>
-    <form action="login" method="post">
+    <form action="register" method="post">
+
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="firstname">Prénom</label>
+        <input type="text" id="firstname" name="firstname" required>
+
         <label for="email">Adresse e-mail</label>
         <input type="text" id="email" name="email" required>
 
         <label for="password">Mot de passe</label>
         <input type="password" id="password" name="password" required>
 
-        <input type="submit" value="Se connecter">
+        <input type="submit" value="S'inscrire">
     </form>
-
-    <p>Pas encore de compte ? <a href="inscription.jsp">Inscrivez-vous</a></p>
 </main>
 
 <jsp:include page="footer.jsp" />

@@ -20,6 +20,7 @@
 
 <main>
 <div class="container">
+
 <%
 
     //retrieve the list of champions as json from response payload

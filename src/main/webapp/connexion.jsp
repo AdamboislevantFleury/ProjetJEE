@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -20,6 +21,8 @@
 
         <input type="submit" value="Se connecter">
     </form>
+
+    <p>Pas encore de compte ? <a href="inscription.jsp">Inscrivez-vous</a></p>
 </main>
 
 <jsp:include page="footer.jsp" />

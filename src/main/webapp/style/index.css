@@ -1,6 +1,4 @@
-
-
-main {
+.container {
     padding: 20px;
     background-image: url(https://images2.alphacoders.com/913/913622.jpg);
 }
@@ -10,14 +8,21 @@ h2 {
     margin-bottom: 20px;
 }
 
-.product, .offer {
+.product-carousel a {
     border: 1px solid #ddd;
     padding: 20px;
     margin-bottom: 20px;
     text-align: center;
+    flex: 0 0 300px;
+    margin-right: 20px;
+    scroll-snap-align: start;
+    padding-right: 20px;
+    padding-left: 20px;
+    transition: transform 0.3s ease-in-out;
+    background-color: black;
 }
 
-.product img, .offer img {
+.product-carousel a img {
     max-width: 100%;
 }
 
@@ -39,22 +44,9 @@ h2 {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-}
-
-.product {
-    flex: 0 0 300px;
-    margin-right: 20px;
-    scroll-snap-align: start;
-    border: 1px solid #ddd;
     padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
 }
 
-.product img {
-    max-width: 100%;
-}
-
-.product:hover {
+.product-carousel a:hover {
     transform: scale(1.05);
 }

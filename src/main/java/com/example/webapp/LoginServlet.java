@@ -44,7 +44,9 @@ public class LoginServlet extends HttpServlet {
 
             if (resultSet.next()) {
                 String id = resultSet.getString("id");
+                String email= resultSet.getString("email");
                 req.getSession().setAttribute("id",id);
+                req.getSession().setAttribute("email",email);
                 req.getSession().setAttribute("logged", "true");
                 req.getRequestDispatcher("/index.jsp").forward(req, resp);
             } else {

@@ -3,6 +3,7 @@
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.io.*" %>
+<%@ page import="javax.swing.JOptionPane" %>
 <%--
   Created by IntelliJ IDEA.
   User: Marwane
@@ -31,19 +32,19 @@
     } else {
         try {
             DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
-            out.println("connexion");
-            // Mettre à jour l'email de l'utilisateur dans la base de données
-            String query = "UPDATE email,password SET email = "+newEmail+" AND password = "+newPassword+" WHERE id = "+id;
+            String query = "UPDATE "+databaseUtils.getDatabase()+".user SET email = '" + newEmail + "', password = '" + newPassword + "' WHERE id = " + id;
+            out.println(query);
             ResultSet resultSet = null;
             resultSet = databaseUtils.sendQuery(query);
-            out.println("requete envoyée");
-
-
+            //boite de dialogue qui marche une fois sur dix
+            //JOptionPane.showMessageDialog(null,"Informations changées, veillez vous reconencter");
+            request.getSession().setAttribute("logged", "false");
+            request.getRequestDispatcher("/connexion.jsp").forward(request, response);
         } catch (Exception e) {
             System.out.println(e.toString());
         }
 
-
+    }
 
 %>
 </body>

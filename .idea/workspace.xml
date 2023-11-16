@@ -10,10 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/style/profil.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_11_2023_18_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_11_2023_18_44__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/UpdateProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/UpdateProfile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/profil.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profil.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/updateProfile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/updateProfile.jsp" afterDir="false" />
     </list>
@@ -72,21 +72,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "H:/EISTI/Ing2/JEE/Projet/src/main/webapp/style",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\EISTI\Ing2\JEE\Projet\src\main\webapp\style" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\EISTI\Ing2\JEE\Projet\src\main\webapp" />
     </key>
@@ -94,7 +98,7 @@
       <recent name="com.example.webapp" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.jsp">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.15">
     <configuration name="index.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/WebApp_war/index.jsp">
       <method v="2" />
     </configuration>
@@ -235,8 +239,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.jsp" />
         <item itemvalue="Tomcat Server.Tomcat 10.1.15" />
+        <item itemvalue="JavaScript Debug.index.jsp" />
         <item itemvalue="JavaScript Debug.inscription.jsp" />
         <item itemvalue="Tomcat Server.profil.jsp" />
         <item itemvalue="JavaScript Debug.profil.jsp" />
@@ -256,7 +260,8 @@
       <workItem from="1700043610620" duration="862000" />
       <workItem from="1700048612138" duration="6276000" />
       <workItem from="1700054961043" duration="1278000" />
-      <workItem from="1700058446672" duration="711000" />
+      <workItem from="1700058446672" duration="1560000" />
+      <workItem from="1700143403382" duration="6926000" />
     </task>
     <servers />
   </component>

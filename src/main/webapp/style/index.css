@@ -1,10 +1,34 @@
 
+body{
+    overflow: hidden;
+}
+
+#video-bg{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: rgba(0,0,0,0.5); */
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
 
 main {
-    background-color: #fff;
+    /* background-color: #fff; */
     padding: 20px;
-    background-image: url(https://images2.alphacoders.com/913/913622.jpg);
-    background-size:cover;
+    /* background-image: url(https://images2.alphacoders.com/913/913622.jpg);
+    background-size:cover; */
+
+    /* overflow-x: auto;
+    overflow-y: auto; */
 }
 
 h2 {

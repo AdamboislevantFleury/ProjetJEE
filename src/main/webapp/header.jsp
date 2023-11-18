@@ -5,12 +5,11 @@
     <link rel="stylesheet" href="style/styles.css">
 </head>
 <header>
-    <h1><a href="#">LEAGUE OF CHAMPS</a></h1>
+    <h1><a href="index.jsp">LEAGUE OF CHAMPS</a></h1>
     <nav>
         <ul>
             <li><a href="index.jsp">Accueil</a></li>
             <li><a href="produit">Produits</a></li>
-            <li><a href="#">Promotions</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>

@@ -24,7 +24,7 @@ public class produitServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("produitServlet doGet");
 
-        int pageID = req.getParameter("pageID") != null ? Integer.parseInt(req.getParameter("pageID")) : 1;
+        int pageID = req.getParameter("page") != null ? Integer.parseInt(req.getParameter("page")) : 1;
 
         try {
             DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
@@ -61,7 +61,6 @@ public class produitServlet extends HttpServlet {
 
         req.getRequestDispatcher("produit.jsp").forward(req, resp);
         System.out.println("produitServlet doGet end");
-        super.doGet(req, resp);
 
     }
 

@@ -17,6 +17,23 @@
 <head>
   <title>Title</title>
   <link rel="stylesheet" href="style/index.css">
+  <script>
+    function addFunction(name) {
+      const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://localhost:8080/WebApp_war/panier', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.setRequestHeader('type', 'add');
+        xhr.setRequestHeader('champName', name);
+        xhr.send();
+
+    }
+    function minusFunction() {
+      alert("Hello! I am an alert box!");
+    }
+    function deleteFunction() {
+      alert("Hello! I am an alert box!");
+    }
+  </script>
 </head>
 <body>
 <jsp:include page="header.jsp" />
@@ -41,12 +58,24 @@
         while (rs.next()) {
 
           out.println("<div class='product'>");
-          out.print("<img src=" + rs.getString("image_url") + " alt='Produit 1'>");
-          out.print("<h3>" + rs.getString("name") + "</h3>");
-          out.print("<p>" + rs.getString("description") + "</p>");
-          out.print("<span class='price'>" + rs.getString("prix") + "</span>");
-          out.print("<a href='page-article?champName=" + rs.getString("name") + "&background_url=" + rs.getString("image_url") + "'>Acheter</a>");
+          out.println("<img src=" + rs.getString("image_url") + " alt='Produit 1'>");
+          out.println("<h3>" + rs.getString("name") + "</h3>");
+          out.println("<p>" + rs.getString("description") + "</p>");
+          out.println("<span class='price'>" + rs.getString("prix") + "</span>");
+          out.println("<span class='quantity'>Quantité : <span class='bold'>" +rs.getString("quantite")+"</span></span>");
+          //add +1 -1 button to add or remove the product from the cart
+          out.println("<div class='add-remove'>");
+          out.print("<button onclick='addFunction(");
+          out.print('"'+rs.getString("name")+'"');
+          out.println(")'>+1</button>");
+          out.println("<button onclick='minusFunction(");
+          out.print('"'+rs.getString("name")+'"');
+          out.println(")'>-1</button>");
+          out.println("<button onclick='deleteFunction(");
+          out.print('"'+rs.getString("name")+'"');
+          out.println(")'>Supprimer</button>");
           out.println("</div>");
+
 
         }
       }catch (SQLException e){

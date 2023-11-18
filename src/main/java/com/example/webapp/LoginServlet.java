@@ -57,7 +57,6 @@ public class LoginServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
 
-        super.doPost(req, resp);
     }
 
     @Override

@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @WebServlet(name = "AchatServlet", value = "/achat")
@@ -32,9 +33,22 @@ public class AchatServlet extends HttpServlet {
 
             try {
                 DatabaseUtils db = new DatabaseUtils();
-                String request = "INSERT INTO `panier` (`id_user`, `id_champion`) VALUES ('"+id_user+"', '"+name+"');";
-                db.sendQuery(request);
 
+                String request = "SELECT * FROM `panier` WHERE `id_user` = '"+id_user+"' AND `id_champion` = '"+name+"';";
+                ResultSet rs = db.sendQuery(request);
+                int quantite = 0;
+
+                if(rs.next()){
+                    quantite = rs.getInt("quantite");
+                    quantite++;
+                    request = "UPDATE `panier` SET `quantite` = '"+quantite+"' WHERE `id_user` = '"+id_user+"' AND `id_champion` = '"+name+"';";
+                    db.sendQuery(request);
+                }else {
+
+                    request = "INSERT INTO `panier` (`id_user`, `id_champion`,`quantite`) VALUES ('" + id_user + "', '" + name + "','1');";
+                    db.sendQuery(request);
+
+                }
                 resp.sendRedirect("panier.jsp");
 
             } catch (SQLException e) {

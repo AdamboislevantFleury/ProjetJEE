@@ -14,12 +14,15 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
 <jsp:include page="header.jsp" />
 
 <main>
 <div class="container">
+
+
 
 <%
 

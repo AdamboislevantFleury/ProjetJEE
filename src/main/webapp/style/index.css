@@ -1,6 +1,34 @@
-.container {
+
+body{
+    overflow: hidden;
+}
+
+#video-bg{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: rgba(0,0,0,0.5); */
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+main {
+    /* background-color: #fff; */
     padding: 20px;
-    background-image: url(https://images2.alphacoders.com/913/913622.jpg);
+    /* background-image: url(https://images2.alphacoders.com/913/913622.jpg);
+    background-size:cover; */
+
+    /* overflow-x: auto;
+    overflow-y: auto; */
 }
 
 h2 {
@@ -8,21 +36,14 @@ h2 {
     margin-bottom: 20px;
 }
 
-.product-carousel a {
+.product, .offer {
     border: 1px solid #ddd;
     padding: 20px;
     margin-bottom: 20px;
     text-align: center;
-    flex: 0 0 300px;
-    margin-right: 20px;
-    scroll-snap-align: start;
-    padding-right: 20px;
-    padding-left: 20px;
-    transition: transform 0.3s ease-in-out;
-    background-color: black;
 }
 
-.product-carousel a img {
+.product img, .offer img {
     max-width: 100%;
 }
 
@@ -38,15 +59,4 @@ h2 {
 .original-price {
     text-decoration: line-through;
     color: #999;
-}
-
-.product-carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 20px;
-}
-
-.product-carousel a:hover {
-    transform: scale(1.05);
 }

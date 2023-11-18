@@ -28,7 +28,7 @@
 
     // Vérifier si l'utilisateur est connecté
     if (id == null) {
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("connexion.jsp");
     } else {
         try {
             DatabaseUtils databaseUtils = DatabaseUtils.getInstance();

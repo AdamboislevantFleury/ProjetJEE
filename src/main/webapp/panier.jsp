@@ -9,6 +9,9 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="org.json.JSONObject" %>
+<%@ page import="com.example.webapp.DatabaseUtils" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -23,27 +26,36 @@
 
     <%
 
-      //retrieve the list of champions as json from response payload
-      String champions = (String) response.getHeader("panier");
-      //parse the json
-      JSONObject championList = new JSONObject(champions);
+      DatabaseUtils db = new DatabaseUtils();
 
+      //get the user id from the session
+      String userId = (String) session.getAttribute("id");
 
-      //print each key and value
-      for (String key : championList.keySet()) {
+      String requestSQL = "select * from champions join panier on name = id_champion where id_user = "+userId+";";
 
-        JSONObject championData = championList.getJSONObject(key);
+      //execute the request
+      ResultSet rs = db.sendQuery(requestSQL);
 
-        out.println("<div class='product'>");
-        out.print("<img src="+championData.getString("image_url")+" alt='Produit 1'>");
-        out.print("<h3>"+key+"</h3>");
-        out.print("<p>"+championData.getString("description")+"</p>");
-        out.print("<span class='price'>"+championData.getString("prix")+"</span>");
-        out.print("<a href='page-article?champName="+championData.getString("name")+"&background_url="+championData.getString("image_url")+"'>Acheter</a>");
-        out.println("</div>");
+      try {
+        //print each key and value
+        while (rs.next()) {
 
+          out.println("<div class='product'>");
+          out.print("<img src=" + rs.getString("image_url") + " alt='Produit 1'>");
+          out.print("<h3>" + rs.getString("name") + "</h3>");
+          out.print("<p>" + rs.getString("description") + "</p>");
+          out.print("<span class='price'>" + rs.getString("prix") + "</span>");
+          out.print("<a href='page-article?champName=" + rs.getString("name") + "&background_url=" + rs.getString("image_url") + "'>Acheter</a>");
+          out.println("</div>");
+
+        }
+      }catch (SQLException e){
+        e.printStackTrace();
       }
     %>
+
+    <p>Vous avez actuellement <span class="bold">0</span> articles dans votre panier.</p>
+
   </div>
 </main>
 <jsp:include page="footer.jsp" />

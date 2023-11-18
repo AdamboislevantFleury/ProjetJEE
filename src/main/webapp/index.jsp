@@ -26,14 +26,14 @@
           <h3>Nom du Produit 1</h3>
           <p>Description du produit 1.</p>
           <span class="price">$19.99</span>
-          <a href="#">Acheter</a>
+          <a href="page-article?champName=Ashe">Acheter</a>
         </div>
         <div class="product">
           <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/2.png" alt="Produit 2">
           <h3>Nom du Produit 2</h3>
           <p>Description du produit 2.</p>
           <span class="price">$29.99</span>
-          <a href="page-article?champName=Annie">Acheter</a>
+          <a href="page-article?champName=Trundle">Acheter</a>
         </div>
         <!-- Ajoutez plus de produits ici -->
       </section>

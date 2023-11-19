@@ -51,15 +51,15 @@ public class produitServlet extends HttpServlet {
 
             }
 
+            // resp.setHeader("champions", championsList.toString());
 
-            resp.setHeader("champions", championsList.toString());
+            req.setAttribute("champions", championsList);
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         req.getRequestDispatcher("produit.jsp").forward(req, resp);
         System.out.println("produitServlet doGet end");
-
     }
 
     @Override

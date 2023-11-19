@@ -43,6 +43,7 @@ public class RegisterServlet extends HttpServlet {
             }
 
             databaseUtils.sendQuery(insertQuery);
+            databaseUtils.closeConnection();
 
             req.getSession().setAttribute("logged", "false");
             req.getRequestDispatcher("/index.jsp").forward(req, resp);

@@ -9,14 +9,14 @@
     <nav>
         <ul>
             <li><a href="index.jsp">Accueil</a></li>
-            <li><a href="produit">Produits</a></li>
+            <li><a href="produit?page=1">Produits</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
     <div class="user-actions">
         <a href="./profil.jsp">Profil</a>
         <%if(session.getAttribute("logged") != "true") out.print("<a href='./connexion.jsp'>Se connecter</a>");
-        else out.println("<a href='./panier'>Panier</a> <a href='./login'>Se déconnecter</a>");
+        else out.println("<a href='./panier.jsp'>Panier</a> <a href='./login'>Se déconnecter</a>");
         %>
     </div>
 </header>

@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @WebServlet(name = "produitServlet", value = "/produit")
@@ -27,14 +28,11 @@ public class produitServlet extends HttpServlet {
         int pageID = req.getParameter("page") != null ? Integer.parseInt(req.getParameter("page")) : 1;
 
         try {
-            DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
-
-
-            System.out.println("Connected to PostgreSQL database!");
 
             //select all rows in the table and print them
+            DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
             String sql = "SELECT * FROM " + databaseUtils.getDatabase() + ".champions LIMIT 10 OFFSET " + (pageID - 1) * 10;
-            java.sql.ResultSet resultSet = databaseUtils.sendQuery(sql);
+            ResultSet resultSet = databaseUtils.sendQuery(sql);
 
             //if result is not null
             JSONObject championsList = new JSONObject();
@@ -53,12 +51,12 @@ public class produitServlet extends HttpServlet {
 
             }
 
+
             resp.setHeader("champions", championsList.toString());
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
         req.getRequestDispatcher("produit.jsp").forward(req, resp);
         System.out.println("produitServlet doGet end");
 

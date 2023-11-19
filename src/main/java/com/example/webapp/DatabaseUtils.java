@@ -19,6 +19,7 @@ public class DatabaseUtils {
         if (instance == null) {
             instance = new DatabaseUtils();
         }
+        System.out.println("DatabaseUtils getInstance");
         return instance;
     }
 
@@ -29,8 +30,8 @@ public class DatabaseUtils {
     public String getDatabase() {
         return database;
     }
-    public Connection getConnection() {
-        if (connection == null) {
+    public Connection getConnection() throws SQLException {
+        if (connection == null || connection.isClosed()) {
             try {
                 Class.forName(mysqlDriver);
                 connection = DriverManager.getConnection(url);
@@ -45,7 +46,7 @@ public class DatabaseUtils {
 
     public ResultSet sendQuery(String query) throws SQLException{
 
-        if(connection == null) getConnection();
+        if(connection == null || connection.isClosed()) getConnection();
 
         try {
             java.sql.Statement statement = connection.createStatement();
@@ -54,6 +55,13 @@ public class DatabaseUtils {
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public void closeConnection() throws SQLException {
+        if (connection != null) {
+            connection.close();
+            System.out.println("Disconnected from PostgreSQL database!");
         }
     }
 

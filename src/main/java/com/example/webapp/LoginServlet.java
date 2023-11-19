@@ -38,9 +38,8 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         String sql = "SELECT * FROM " + databaseUtils.getDatabase() + ".user WHERE email = '" + username + "' AND password = '" + password + "'";
-        ResultSet resultSet = null;
         try {
-            resultSet = databaseUtils.sendQuery(sql);
+            ResultSet resultSet = databaseUtils.sendQuery(sql);
 
             if (resultSet.next()) {
                 String id = resultSet.getString("id");
@@ -53,10 +52,11 @@ public class LoginServlet extends HttpServlet {
                 req.getSession().setAttribute("logged", "false");
                 req.getRequestDispatcher("/connexion.jsp").forward(req, resp);
             }
+
+            databaseUtils.closeConnection();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @Override

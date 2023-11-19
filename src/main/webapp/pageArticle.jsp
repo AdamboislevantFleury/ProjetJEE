@@ -15,6 +15,25 @@
             background-image: url(<% out.print(request.getAttribute("background_url")); %>);
     }
     </style>
+    <script>
+        function addpanier(name) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "http://localhost:8080/WebApp_war/panier", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.setRequestHeader("type", "insert");
+            xhttp.setRequestHeader("champName", name);
+            xhttp.send();
+
+            //check response
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    //redirect to panier
+                    window.location.href = "http://localhost:8080/WebApp_war/panier.jsp";
+                }
+            };
+
+        }
+    </script>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -36,7 +55,7 @@
     <h1><% out.print(rs.getString("name"));%></h1>
     <p><% out.print(rs.getString("description"));%></p>
     <p><% out.print(rs.getString("prix"));%></p>
-    <a href="achat?champName=<% out.println(rs.getString("name"));%>">Acheter</a>
+    <button onclick="addpanier('<% out.print(rs.getString("name"));%>')">Acheter</button>
 </div>
 
 

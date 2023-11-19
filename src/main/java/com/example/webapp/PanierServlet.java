@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Objects;
 
 @WebServlet(name = "PanierServlet", value = "/panier")
 public class PanierServlet extends HttpServlet {
@@ -30,29 +31,51 @@ public class PanierServlet extends HttpServlet {
             return;
         }
 
-        if(type == "delete"){
+        if (Objects.equals(type, "insert")) {
 
-            DatabaseUtils db = new DatabaseUtils();
-            String sqlReq = "delete from panier where id_user = " + id_user + " and id_champion = " + name + ";";
             try {
+                DatabaseUtils db = new DatabaseUtils();
+                String sqlReq = "insert into panier values ('" + name + "','" + id_user + "',1)";
                 db.sendQuery(sqlReq);
+                db.closeConnection();
+
+                //respond with aknowledgement
+                resp.getWriter().write("ok");
+
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
 
+            return;
+        }
+        if (Objects.equals(type, "delete")) {
+
+            try {
+                DatabaseUtils db = new DatabaseUtils();
+                String sqlReq = "delete from panier where id_user = " + id_user + " and id_champion = '" + name + "'";
+                db.sendQuery(sqlReq);
+                db.closeConnection();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
 
         }
 
         try {
             DatabaseUtils db = new DatabaseUtils();
-            String sqlReq = "update panier set quantite = quantite "+(type == "remove"?"-":"+")+" 1 where id_user = " + id_user + " and id_champion = " + name + ";";
+            String sqlReq = "update panier set quantite = quantite " + (Objects.equals(type, "remove") ? "-" : "+") + " 1 where id_user = " + id_user + " and id_champion = '" + name + "'";
             db.sendQuery(sqlReq);
+            db.closeConnection();
+
+            //respond with aknowledgement
+            resp.getWriter().write("ok");
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
     }
+
 
     @Override
     public void destroy() {

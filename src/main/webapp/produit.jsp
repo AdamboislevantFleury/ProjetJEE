@@ -23,6 +23,27 @@
 </video>
 <div id="overlay">
     <jsp:include page="header.jsp" />
+
+    <%
+        String CurrentSearch = (request.getParameter("search")!=null) ? request.getParameter("search") : "";
+    %>
+
+    <div class="search-bar">
+        <form action="produit" method="get">
+            <input type="text" name="search" placeholder="Rechercher un produit" value="<%=CurrentSearch%>">
+            <%
+                if (CurrentSearch != "") {
+                %>
+                    <a class="cancel-search" href="produit">
+                        <%-- <img src="media/cross.svg" alt="Annuler la recherche"> --%>
+                    </a>
+                <%
+                } 
+            %>
+            <input type="submit" value="">
+        </form>
+    </div>
+
     <main>
         <div class="container">
 
@@ -60,9 +81,32 @@
                 <%
             }
         %>
+
+        <% if(Product_id == 0) { %>
+            <div class="no-product no-select">
+                <span class="description">
+                    <h3>Aucun produit trouvé</h3>
+                </span>
+            </div>
+        <% } %>
         </div>
     </main>
     <div class="page-select">
+    <%!
+        public String getSelfURL(int page, String search) {
+            String url = "produit?";
+
+            if(page != 1) {
+                url += "page="+page+(search!="" ? "&" : "");
+            }
+
+            if(search != "") {
+                url += "search="+search;
+            }
+
+            return url;
+        }
+    %>
     <%
         int ChampionsAmount = (int)request.getAttribute("ChampionsAmount");
         int ChampionsPerPage = (int)request.getAttribute("ChampionsPerPage");
@@ -125,20 +169,21 @@
 
             if (pages[i] == '-') {
                 %>
-                    <a <%=(currentPage>1) ? "href=\"produit?page="+(currentPage-1)+"\"" : "class=\"unavailable\""%> >&lt; <span>Précedent</span> </a>
+                    <%-- <a <%=(currentPage>1) ? "href=\"produit?page="+(currentPage-1)+"\"" : "class=\"unavailable\""%> >&lt; <span>Précedent</span> </a> --%>
+                    <a <%=(currentPage>1) ? "href=" + getSelfURL(currentPage-1, CurrentSearch) : "class=\"unavailable\""%> >&lt; <span>Précedent</span> </a>
                 <%
                 continue;
             }
 
             if (pages[i] == '+') {
                 %>
-                    <a <%=(currentPage<PagesAmount) ? "href=\"produit?page="+(currentPage+1)+"\"" : "class=\"unavailable\""%> > <span>Suivant</span> &gt;</a>
+                    <a <%=(currentPage<PagesAmount) ? "href=" + getSelfURL(currentPage+1, CurrentSearch) : "class=\"unavailable\""%> > <span>Suivant</span> &gt;</a>
                 <%
                 continue;
             }
 
             %>
-                <a href="produit?page=<%=pages[i]%>"><%=pages[i]%></a>
+                <a href="<%=getSelfURL((int)pages[i] - (int)'0', CurrentSearch)%>"><%=pages[i]%></a>
             <%
         }
     %>

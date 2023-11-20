@@ -1,3 +1,73 @@
+.no-product{
+    color: whitesmoke;
+    font-size: 4em;
+    opacity: .5;
+}
+
+
+.search-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.search-bar form{
+    position: relative;
+    height: 50px;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.search-bar form input[type="text"]{
+    position: relative;
+    flex-grow: 2;
+    height: 100%;
+    font-size: 1.75rem;
+    padding-left: 10px;
+    border-radius: inherit;
+    border: none;
+    background-color: transparent;
+}
+
+.search-bar form input[type="submit"]{
+    position: relative;
+    max-height: 100%;
+    aspect-ratio: 1/1;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    background-image: url("/media/loupe.svg");
+    background-size: 90%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    /* transition: all 0.3s ease-in-out; */
+}
+
+.search-bar form a.cancel-search{
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1/1;
+    width: auto;
+    background-color: transparent;
+    background-image: url("/media/cross.svg");
+    background-size: 60%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
 
 
 .container{

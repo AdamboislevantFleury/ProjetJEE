@@ -35,8 +35,16 @@ public class produitServlet extends HttpServlet {
 
             //select all rows in the table and print them
             DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
-            String sql = "SELECT * FROM " + databaseUtils.getDatabase() + ".champions LIMIT " + ChampsPerPages + " OFFSET " + (pageID - 1) * ChampsPerPages;
-            ResultSet resultSet = databaseUtils.sendQuery(sql);
+
+            String ChampionsList_search = 
+                req.getParameter("search")!=null ? 
+                " WHERE name LIKE '%" + ((String)req.getParameter("search")).replaceAll("(.{1})", "$1%") + "'" :
+                "";
+            
+            String ChampionsList_clampData = " LIMIT " + ChampsPerPages + " OFFSET " + (pageID - 1) * ChampsPerPages;
+            
+            String ChampionsList_query = "SELECT * FROM " + databaseUtils.getDatabase() + ".champions" + ChampionsList_search + ChampionsList_clampData;
+            ResultSet resultSet = databaseUtils.sendQuery(ChampionsList_query);
 
             //if result is not null
             JSONObject championsList = new JSONObject();
@@ -60,7 +68,7 @@ public class produitServlet extends HttpServlet {
 
 
 
-            ResultSet ChampionsAmount_query = databaseUtils.sendQuery("SELECT COUNT(*) FROM " + databaseUtils.getDatabase() + ".champions");
+            ResultSet ChampionsAmount_query = databaseUtils.sendQuery("SELECT COUNT(*) FROM " + databaseUtils.getDatabase() + ".champions" + ChampionsList_search);
 
             if(ChampionsAmount_query.next()) {
                 int ChampionsAmount = ChampionsAmount_query.getInt(1);

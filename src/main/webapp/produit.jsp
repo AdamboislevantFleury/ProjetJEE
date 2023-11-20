@@ -24,44 +24,125 @@
 <div id="overlay">
     <jsp:include page="header.jsp" />
     <main>
-    <div class="container">
+        <div class="container">
 
+        <%
+
+            //retrieve the list of champions as json from response payload
+            // String champions = (String) response.getHeader("champions");
+            //parse the json
+            // JSONObject championList = new JSONObject(champions);
+            JSONObject championList = (JSONObject)request.getAttribute("champions");
+
+            int Product_id = 0;
+
+            //print each key and value
+            for (String key : championList.keySet()) {
+
+                JSONObject championData = championList.getJSONObject(key);
+                
+                Product_id++;
+
+                %>
+
+                <div class="product">
+                    <img src="<%=championData.getString("image_url")%>" alt="Produit <%=Product_id%>">
+                    <span class="description">
+                        <h3><%=key%></h3>
+                        <p><%=championData.getString("description")%></p>
+                    </span>
+                    <span class="price"><%=championData.getString("prix")%></span>
+                    <span class="buy-btn-container">
+                        <a class="buy-btn" href="page-article?champName=<%=championData.getString("name")%>&background_url=<%=championData.getString("image_url")%>">Acheter</a>
+                    </span>
+                </div>
+                
+                <%
+            }
+        %>
+        </div>
+    </main>
+    <div class="page-select">
     <%
+        int ChampionsAmount = (int)request.getAttribute("ChampionsAmount");
+        int ChampionsPerPage = (int)request.getAttribute("ChampionsPerPage");
 
-        //retrieve the list of champions as json from response payload
-        // String champions = (String) response.getHeader("champions");
-        //parse the json
-        // JSONObject championList = new JSONObject(champions);
-        JSONObject championList = (JSONObject)request.getAttribute("champions");
+        int currentPage = (request.getParameter("page")!=null) ? Integer.parseInt(request.getParameter("page")) : 1;
 
-        int Product_id = 0;
+        int PagesAmount = (int)Math.ceil((double)ChampionsAmount / ChampionsPerPage);
 
-        //print each key and value
-        for (String key : championList.keySet()) {
+        /*
+         * Version alternative de la pagination:
+         * < (1) ... 9 >
+         * < 1 (2) ... 9 >
+         * < 1 ... (3) ... 9 >
+         *         etc
+         * < 1 ... (7) ... 9 >
+         * < 1 ... (8) 9 >
+         * < 1 ... (9) >
+         * 
+        */
+        // char[] pages = {
+        //     '-',
+        //     '1',
+        //     (currentPage > 2)? '?' : ' ',
+        //     (currentPage >= 2 && currentPage <= (PagesAmount-1)) ? (char)(currentPage+(int)('0')) : ' ',
+        //     (currentPage < (PagesAmount-1)) ? '?' : ' ',
+        //     (char)(PagesAmount+(int)('0')),
+        //     '+',
+        //     '\0'
+        // };
 
-            JSONObject championData = championList.getJSONObject(key);
-            
-            Product_id++;
+        char[] pages = new char[PagesAmount+3];
+
+        pages[0] = '-';
+        pages[PagesAmount+1] = '+';
+        pages[PagesAmount+2] = '\0';
+
+        for(int i = 1; i <= PagesAmount; i++) {
+            pages[i] = (char)(i+(int)('0'));
+        }
+
+
+        for(int i = 0; pages[i]!='\0'; i++) {
+            if (pages[i] == ' ') {
+                continue;
+            }
+
+            if (pages[i] == '?') {
+                %>
+                    <a>...</a>
+                <%
+                continue;
+            }
+
+            if (pages[i] == (char)(currentPage+(int)'0')) {
+                %>
+                    <a class="current-page"><%=pages[i]%></a>
+                <%
+                continue;
+            }
+
+            if (pages[i] == '-') {
+                %>
+                    <a <%=(currentPage>1) ? "href=\"produit?page="+(currentPage-1)+"\"" : "class=\"unavailable\""%> >&lt; <span>Précedent</span> </a>
+                <%
+                continue;
+            }
+
+            if (pages[i] == '+') {
+                %>
+                    <a <%=(currentPage<PagesAmount) ? "href=\"produit?page="+(currentPage+1)+"\"" : "class=\"unavailable\""%> > <span>Suivant</span> &gt;</a>
+                <%
+                continue;
+            }
 
             %>
-
-            <div class="product">
-                <img src="<%=championData.getString("image_url")%>" alt="Produit <%=Product_id%>">
-                <span class="description">
-                    <h3><%=key%></h3>
-                    <p><%=championData.getString("description")%></p>
-                </span>
-                <span class="price"><%=championData.getString("prix")%></span>
-                <span class="buy-btn-container">
-                    <a class="buy-btn" href="page-article?champName=<%=championData.getString("name")%>&background_url=<%=championData.getString("image_url")%>">Acheter</a>
-                </span>
-            </div>
-            
+                <a href="produit?page=<%=pages[i]%>"><%=pages[i]%></a>
             <%
         }
     %>
     </div>
-    </main>
     <jsp:include page="footer.jsp" />
 </div>
 </body>

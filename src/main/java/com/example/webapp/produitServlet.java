@@ -25,13 +25,17 @@ public class produitServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("produitServlet doGet");
 
+        System.out.println("Page: " + req.getParameter("page") + "");
+
         int pageID = req.getParameter("page") != null ? Integer.parseInt(req.getParameter("page")) : 1;
+
+        int ChampsPerPages = 10;
 
         try {
 
             //select all rows in the table and print them
             DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
-            String sql = "SELECT * FROM " + databaseUtils.getDatabase() + ".champions LIMIT 10 OFFSET " + (pageID - 1) * 10;
+            String sql = "SELECT * FROM " + databaseUtils.getDatabase() + ".champions LIMIT " + ChampsPerPages + " OFFSET " + (pageID - 1) * ChampsPerPages;
             ResultSet resultSet = databaseUtils.sendQuery(sql);
 
             //if result is not null
@@ -51,9 +55,20 @@ public class produitServlet extends HttpServlet {
 
             }
 
-            // resp.setHeader("champions", championsList.toString());
-
             req.setAttribute("champions", championsList);
+            req.setAttribute("ChampionsPerPage", ChampsPerPages);
+
+
+
+            ResultSet ChampionsAmount_query = databaseUtils.sendQuery("SELECT COUNT(*) FROM " + databaseUtils.getDatabase() + ".champions");
+
+            if(ChampionsAmount_query.next()) {
+                int ChampionsAmount = ChampionsAmount_query.getInt(1);
+                // int PagesAmount = (int) Math.ceil((double) ChampionsAmount / ChampsPerPages);
+                req.setAttribute("ChampionsAmount", ChampionsAmount);
+            }else{
+                req.setAttribute("ChampionsAmount", -1);
+            }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

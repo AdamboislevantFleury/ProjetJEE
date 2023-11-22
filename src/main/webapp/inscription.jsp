@@ -35,6 +35,7 @@
 
         <input type="submit" value="S'inscrire">
     </form>
+    <p>Déjà un compte ? <a href="connexion.jsp">Connectez-vous</a></p>
 </main>
 
 <jsp:include page="footer.jsp" />

@@ -30,7 +30,7 @@
           if (xhr.status === 200) {
             console.log(xhr.responseText);
             alert("Achat effectué");
-            window.location.href = "http://localhost:8080/WebApp_war/profil.jsp";
+            window.location.href = "profile.jsp";
           } else {
             console.log('Request failed.  Returned status of ' + xhr.status);
           }

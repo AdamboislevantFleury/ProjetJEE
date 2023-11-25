@@ -4,6 +4,10 @@
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.io.*" %>
+<%@ page import="com.example.webapp.UserList" %>
+<%@ page import="com.example.webapp.UserList" %>
+<%@ page import="com.example.webapp.User" %>
+<%@ page import="java.util.Iterator" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -19,6 +23,7 @@
     <div class="bubbles">
        <jsp:include page="span.jsp"></jsp:include>
     </div>
+
     <h1>Bienvenue sur votre espace profile, Invocateur</h1>
     <div class="container2">
         <div id="modifying">
@@ -78,6 +83,7 @@
                         }
                     %>
             </table>
+
             <div id="adm">
                 <legend>For admins</legend>
                 <input type="radio" id="add" name="rights" value="ajouter" checked />
@@ -85,7 +91,18 @@
                 <input type="radio" id="remove" name="rights" value="retirer" checked />
                 <label for="remove">Retirer des droits</label><br>
                 <input type="radio" id="change" name="rights" value="changer" checked />
-                <label for="change">Changer les droits</label>
+                <label for="change">Changer les droits</label><br>
+                <input type="text" id="searchBar" placeholder="Rechercher un utilisateur" onkeyup="filterUsers()"/><br>
+                <ul id="userList">
+                <%
+                    UserList users = new UserList();
+                    Iterator<String> it = users.getUserList().iterator();
+                    while(it.hasNext()){
+                        String email = it.next();
+                        out.println("<li>"+email+"</li>");
+                    }
+                %>
+                </ul>
             </div>
         </div>
     </div>

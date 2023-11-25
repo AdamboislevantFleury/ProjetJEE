@@ -2,13 +2,12 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+
 }
 body{
     min-height: 100vh;
     color:  #C4A15B;
     background-color: #010b14 !important;
-
-    //background-color: #199bb9;
 }
 
 .container{

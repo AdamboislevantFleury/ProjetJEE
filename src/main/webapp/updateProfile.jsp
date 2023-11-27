@@ -23,7 +23,8 @@
 
 <%
     String newEmail = request.getParameter("newEmail");
-    String newPassword = request.getParameter("newPassword");
+    String newPassword1 = request.getParameter("newPassword1");
+    String newPassword2 = request.getParameter("newPassword2");
     String id = (String)request.getSession().getAttribute("id");
 
     // Vérifier si l'utilisateur est connecté
@@ -31,19 +32,46 @@
         response.sendRedirect("connexion.jsp");
     } else {
         try {
-            DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
-            String query = "UPDATE "+databaseUtils.getDatabase()+".user SET email = '" + newEmail + "', password = '" + newPassword + "' WHERE id = " + id;
-            out.println(query);
+                DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
+                String query = "SELECT password FROM "+databaseUtils.getDatabase()+".user WHERE id = " + id;
+                ResultSet resultSet = null;
+                resultSet = databaseUtils.sendQuery(query);
+                if(resultSet.next()){
+                    String oldPassword = resultSet.getString("password");
+                    int cas;
+                    if(newPassword1.equals(newPassword2)){
+                        if(!newPassword1.equals(oldPassword)){
+                            query = "UPDATE "+databaseUtils.getDatabase()+".user SET email = '" + newEmail + "', password = '" + newPassword1 + "' WHERE id = " + id;
+                            resultSet = null;
+                            resultSet = databaseUtils.sendQuery(query);
+                            request.getSession().setAttribute("logged", "false");
+                            request.getRequestDispatcher("/connexion.jsp").forward(request, response);
+                        }
+                        else{
+                            out.println("le nouveau mot de passe et l'ancien doivent etre différents");
+                        }
+                    }
+                    else{
+                        out.println("les mots de passes ne sont pas le memes");
+                    }
+                }
+            }
+            catch(Exception e){
+                System.out.println(e.toString());
+            }
+            /*DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
+            String query = "UPDATE "+databaseUtils.getDatabase()+".user SET email = '" + newEmail + "', password = '" + newPassword1 + "' WHERE id = " + id;
             ResultSet resultSet = null;
             resultSet = databaseUtils.sendQuery(query);
             //boite de dialogue qui marche une fois sur dix
             //JOptionPane.showMessageDialog(null,"Informations changées, veillez vous reconencter");
             request.getSession().setAttribute("logged", "false");
             request.getRequestDispatcher("/connexion.jsp").forward(request, response);
+
         } catch (Exception e) {
             System.out.println(e.toString());
         }
-
+        */
     }
 
 %>

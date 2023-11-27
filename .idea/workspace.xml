@@ -2,22 +2,29 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="WebApp:war exploded" />
+      <artifact name="WebApp:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="amélioration de l'inde">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_11_2023_18_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_11_2023_18_44__Changes_.xml" afterDir="false" />
+    <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/updateEmail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/updatePassword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/javascript/profil.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/profile.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/UpdateProfile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/connexion.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/connexion.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/inscription.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/inscription.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/panier.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/panier.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/profil.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/style/profil.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/profil.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/updateProfile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/updateProfile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +35,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="CSS File" />
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -68,60 +75,64 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2YB0T3nbkjjfsSIwlzHpsX7Jekg" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;H:/EISTI/Ing2/JEE/Projet/src/main/webapp/style&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "H:/EISTI/Ing2/JEE/Projet/src/main/webapp/style",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="H:\EISTI\Ing2\JEE\Projet\src\main\webapp\style" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\EISTI\Ing2\JEE\Projet\src\main\webapp" />
+      <recent name="H:\EISTI\Ing2\JEE\Projet\src\main\webapp\media" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.webapp" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.16">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.15">
     <configuration name="index.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/WebApp_war/index.jsp">
       <method v="2" />
     </configuration>
     <configuration name="inscription.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/WebApp_war/inscription.jsp">
       <method v="2" />
     </configuration>
-    <configuration name="profil.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/WebApp_war/profil.jsp">
+    <configuration name="profile.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/WebApp_war/profile.jsp">
       <method v="2" />
     </configuration>
-    <configuration name="Tomcat 10.1.13" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="TomEE 10.1.13" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
+    <configuration name="Tomcat 10.1.15" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 10.1.15" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WebApp_war/index.jsp" />
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="WebApp:war exploded">
+        <artifact name="WebApp:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/WebApp_war_exploded" />
+            <option name="CONTEXT_PATH" value="/WebApp_war" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="c6b70b71-723b-4363-86bc-d58ac02c3caf" />
+        <option name="BASE_DIRECTORY_NAME" value="52e34160-04ba-4a06-8db9-bfe2e3e99841" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -129,7 +140,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="63685" />
+        <option name="DEBUG_PORT" value="53936" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -194,74 +205,28 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="WebApp:war exploded" />
+          <artifact name="WebApp:war" />
         </option>
       </method>
     </configuration>
-    <configuration name="Tomcat 10.1.16" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.16" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="profil.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 10.1.15" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/profil.jsp" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="WebApp:war exploded">
+        <artifact name="WebApp:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/WebApp_war_exploded" />
+            <option name="CONTEXT_PATH" value="/WebApp_war" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="694e2e4a-e939-49d6-8d43-14b06a19c6dd" />
+        <option name="BASE_DIRECTORY_NAME" value="96160531-fe21-49d9-96b8-6a37c7805dff" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="62057" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -280,22 +245,24 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="WebApp:war exploded" />
+          <artifact name="WebApp:war" />
         </option>
       </method>
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.profile.jsp" />
       <item itemvalue="JavaScript Debug.index.jsp" />
       <item itemvalue="JavaScript Debug.inscription.jsp" />
-      <item itemvalue="JavaScript Debug.profil.jsp" />
-      <item itemvalue="Tomcat Server.Tomcat 10.1.16" />
-      <item itemvalue="TomEE Server.Tomcat 10.1.13" />
+      <item itemvalue="Tomcat Server.profil.jsp" />
+      <item itemvalue="Tomcat Server.Tomcat 10.1.15" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Tomcat Server.Tomcat 10.1.15" />
+        <item itemvalue="JavaScript Debug.profile.jsp" />
         <item itemvalue="JavaScript Debug.index.jsp" />
         <item itemvalue="JavaScript Debug.inscription.jsp" />
-        <item itemvalue="JavaScript Debug.profil.jsp" />
+        <item itemvalue="Tomcat Server.profil.jsp" />
       </list>
     </recent_temporary>
   </component>
@@ -314,20 +281,16 @@
       <workItem from="1700054961043" duration="1278000" />
       <workItem from="1700058446672" duration="1560000" />
       <workItem from="1700143403382" duration="6926000" />
-      <workItem from="1700418884894" duration="6867000" />
-      <workItem from="1700579010924" duration="1043000" />
-      <workItem from="1700735588771" duration="8802000" />
+      <workItem from="1700475692864" duration="3463000" />
+      <workItem from="1700481038331" duration="380000" />
+      <workItem from="1700579005940" duration="152000" />
+      <workItem from="1700579678506" duration="36000" />
+      <workItem from="1700671926860" duration="7748000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="dependencySupport" implementationName="executable:docker" />
-    <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
-    <option featureType="dependencySupport" implementationName="executable:kubectl" />
-    <option featureType="dependencySupport" implementationName="maven-packaging:war" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -339,9 +302,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="amélioration de l'inde" />
-    <option name="LAST_COMMIT_MESSAGE" value="amélioration de l'inde" />
   </component>
 </project>

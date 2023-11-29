@@ -5,7 +5,7 @@
 
 }
 body{
-    min-height: 100vh;
+    min-height: 200vh;
     color:  #C4A15B;
     background-color: #010b14 !important;
 }
@@ -117,7 +117,8 @@ table{
 }
 
 #achats{
-    margin-top:5%;
+    margin-top:-20%;
+    margin-left: 30%;
 }
 
 #adm{

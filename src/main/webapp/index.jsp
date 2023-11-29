@@ -1,7 +1,6 @@
-<%@ page import="java.io.StringReader" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="org.json.JSONObject" %>
+<%@ page import="com.example.webapp.DatabaseUtils" %>
+<%@ page import="com.example.webapp.Champions" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,44 +19,24 @@
     <section id="featured-products">
       <h2>Produits en Vedette</h2>
       <div class="product-carousel">
-          <%
-              JSONObject championList = (JSONObject)request.getAttribute("champions");
-          %>
-        <a href="page-article?champName=Produit1" class="product">
-          <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/429.png" alt="Produit 1">
-          <h3>Nom du Produit 1</h3>
-          <p>Description du produit 1.</p>
-          <span class="price">$19.99</span>
-        </a>
+        <%
+          DatabaseUtils db = new DatabaseUtils();
+          String[] roles = {"Top", "Jungle", "Mid", "Support", "ADC"};
 
-        <a href="page-article?champName=Produit2" class="product">
-          <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/1.png" alt="Produit 2">
-          <h3>Nom du Produit 2</h3>
-          <p>Description du produit 2.</p>
-          <span class="price">$29.99</span>
+          for (String role : roles) {
+            JSONObject champion = Champions.getRandomChampionByLane(db, role);
+            if (champion != null) {
+        %>
+        <a href="page-article?champName=<%= champion.getString("championName") %>" class="product">
+          <img src="<%= champion.getString("imageUrl") %>" alt="<%= champion.getString("championName") %>">
+          <h3><%= champion.getString("championName") %></h3>
+          <p><%= champion.getString("role") %></p>
+          <span class="price"><%= champion.getString("prix") %> €</span>
         </a>
-
-        <a href="page-article?champName=Produit2" class="product">
-          <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/2.png" alt="Produit 2">
-          <h3>Nom du Produit 2</h3>
-          <p>Description du produit 2.</p>
-          <span class="price">$29.99</span>
-        </a>
-
-        <a href="page-article?champName=Produit2" class="product">
-          <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/3.png" alt="Produit 2">
-          <h3>Nom du Produit 2</h3>
-          <p>Description du produit 2.</p>
-          <span class="price">$29.99</span>
-        </a>
-
-        <a href="page-article?champName=Produit2" class="product">
-          <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/4.png" alt="Produit 2">
-          <h3>Nom du Produit 2</h3>
-          <p>Description du produit 2.</p>
-          <span class="price">$29.99</span>
-        </a>
-
+        <%
+            }
+          }
+        %>
         <!-- Ajoutez d'autres produits ici -->
       </div>
     </section>

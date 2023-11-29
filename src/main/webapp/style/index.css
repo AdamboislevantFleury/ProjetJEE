@@ -37,7 +37,8 @@ h2 {
 
 .price {
     font-weight: bold;
-    color: white;
+    color: #09cae6;
+    text-shadow: #09cae6 1px 0 10px;
 }
 
 .discount-price {

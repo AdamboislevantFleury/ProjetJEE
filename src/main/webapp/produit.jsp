@@ -9,6 +9,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="org.json.JSONObject" %>
+<%@ page import="com.example.webapp.DatabaseUtils" %>
+<%@ page import="com.example.webapp.Champions" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,49 +20,64 @@
 </head>
 <body>
 <video muted loop autoplay id="video-bg">
-  <source src="media/background.mp4" type="video/mp4" />
-  <img src="media/background-fallback.jpg" title="Your browser does not support the <video> tag" />
+    <source src="media/background.mp4" type="video/mp4" />
+    <img src="media/background-fallback.jpg" title="Your browser does not support the <video> tag" />
 </video>
 <div id="overlay">
     <jsp:include page="header.jsp" />
     <main>
-    <div class="container">
+        <div class="container">
 
-    <%
+            <div id="filter-form">
+                <form action="produit.jsp" method="post">
+                    <label for="lane-filter">Filtrer par lane :</label>
+                    <select id="lane-filter" name="lane">
+                        <option value="">Aucun filtre</option>
+                        <option value="Top">Top</option>
+                        <option value="Jungle">Jungle</option>
+                        <option value="Mid">Mid</option>
+                        <option value="Support">Support</option>
+                        <option value="ADC">ADC</option>
+                    </select>
+                    <input type="submit" value="Filtrer">
+                </form>
+            </div>
 
-        //retrieve the list of champions as json from response payload
-        // String champions = (String) response.getHeader("champions");
-        //parse the json
-        // JSONObject championList = new JSONObject(champions);
-        JSONObject championList = (JSONObject)request.getAttribute("champions");
+            <%
+                DatabaseUtils db = new DatabaseUtils();
+                String selectedLane = request.getParameter("lane");
 
-        int Product_id = 0;
+                // Si la lane n'est pas sélectionnée, utilisez une valeur par défaut
+                if (selectedLane == null || selectedLane.isEmpty()) {
+                    selectedLane = "Top";
+                }
 
-        //print each key and value
-        for (String key : championList.keySet()) {
+                JSONObject championList = (JSONObject) request.getAttribute("champions");
 
-            JSONObject championData = championList.getJSONObject(key);
-            
-            Product_id++;
+                int Product_id = 0;
 
+                for (String key : championList.keySet()) {
+                    JSONObject championData = Champions.getRandomChampionByLane(db, selectedLane);
+
+                    if (championData != null) {
+                        Product_id++;
             %>
-
             <div class="product">
                 <img src="<%=championData.getString("image_url")%>" alt="Produit <%=Product_id%>">
                 <span class="description">
-                    <h3><%=key%></h3>
-                    <p><%=championData.getString("description")%></p>
-                </span>
+                                <h3><%=key%></h3>
+                                <p><%=championData.getString("description")%></p>
+                            </span>
                 <span class="price"><%=championData.getString("prix")%></span>
                 <span class="buy-btn-container">
-                    <a class="buy-btn" href="page-article?champName=<%=championData.getString("name")%>&background_url=<%=championData.getString("image_url")%>">Acheter</a>
-                </span>
+                                <a class="buy-btn" href="page-article?champName=<%=championData.getString("name")%>&background_url=<%=championData.getString("image_url")%>">Acheter</a>
+                            </span>
             </div>
-            
             <%
-        }
-    %>
-    </div>
+                    }
+                }
+            %>
+        </div>
     </main>
     <jsp:include page="footer.jsp" />
 </div>

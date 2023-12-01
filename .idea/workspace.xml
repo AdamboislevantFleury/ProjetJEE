@@ -9,12 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="randomisation des personnages de la page d'accueil en fonction de leur lane">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="page produit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/Champions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/Champions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/produit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/produit.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +49,20 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AdamboislevantFleury&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="2680a142-89c1-4734-9977-6411a9595a1e" />
+        <option name="url" value="https://github.com/AdamboislevantFleury/ProjetJEE.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -196,7 +209,6 @@
       </method>
     </configuration>
     <configuration name="Tomcat 10.1.16" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.16" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="WebApp:war exploded">
           <settings>
@@ -315,8 +327,18 @@
       <workItem from="1700418884894" duration="6867000" />
       <workItem from="1700579010924" duration="1043000" />
       <workItem from="1700735588771" duration="8802000" />
-      <workItem from="1701276607395" duration="352000" />
+      <workItem from="1701276607395" duration="762000" />
+      <workItem from="1701342375722" duration="6642000" />
     </task>
+    <task id="LOCAL-00001" summary="randomisation des personnages de la page d'accueil en fonction de leur lane">
+      <option name="closed" value="true" />
+      <created>1701277063666</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701277063666</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,6 +364,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="amélioration de l'inde" />
     <MESSAGE value="randomisation des personnages de la page d'accueil en fonction de leur lane" />
-    <option name="LAST_COMMIT_MESSAGE" value="randomisation des personnages de la page d'accueil en fonction de leur lane" />
+    <MESSAGE value="page produit" />
+    <option name="LAST_COMMIT_MESSAGE" value="page produit" />
   </component>
 </project>

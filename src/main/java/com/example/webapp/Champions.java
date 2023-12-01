@@ -14,9 +14,11 @@ public class Champions {
 
             if (resultSet.next()) {
                 JSONObject champion = new JSONObject();
-                champion.put("championName", resultSet.getString("name"));
-                champion.put("imageUrl", resultSet.getString("image_url"));
+                champion.put("Product_id",resultSet.getString("idChampions"));
+                champion.put("name", resultSet.getString("name"));
+                champion.put("image_url", resultSet.getString("image_url"));
                 champion.put("role", resultSet.getString("role"));
+                champion.put("description", resultSet.getString("description"));
                 champion.put(("prix"), resultSet.getString("prix"));
                 return champion;
             }

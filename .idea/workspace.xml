@@ -10,12 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/span.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/updateEmail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/updatePassword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/javascript/profil.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/profile.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/profil.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profil.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/UpdateProfile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/connexion.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/connexion.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/inscription.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/inscription.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/panier.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/panier.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/profil.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/style/profil.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/profil.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/updateProfile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/updateProfile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +34,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -72,21 +82,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;H:/EISTI/Ing2/JEE/Projet/src/main/webapp/style&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "H:/EISTI/Ing2/JEE/Projet/src/main/webapp/style",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="H:\EISTI\Ing2\JEE\Projet\src\main\webapp\style" />
@@ -106,11 +117,11 @@
     <configuration name="inscription.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/WebApp_war/inscription.jsp">
       <method v="2" />
     </configuration>
-    <configuration name="profil.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/WebApp_war/profil.jsp">
+    <configuration name="profile.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/WebApp_war/profile.jsp">
       <method v="2" />
     </configuration>
     <configuration name="Tomcat 10.1.15" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 10.1.15" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/index.jsp" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WebApp_war/index.jsp" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
@@ -238,13 +249,20 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.profile.jsp" />
+      <item itemvalue="JavaScript Debug.index.jsp" />
+      <item itemvalue="JavaScript Debug.inscription.jsp" />
+      <item itemvalue="Tomcat Server.profil.jsp" />
+      <item itemvalue="Tomcat Server.Tomcat 10.1.15" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Tomcat Server.Tomcat 10.1.15" />
+        <item itemvalue="JavaScript Debug.profile.jsp" />
         <item itemvalue="JavaScript Debug.index.jsp" />
         <item itemvalue="JavaScript Debug.inscription.jsp" />
         <item itemvalue="Tomcat Server.profil.jsp" />
-        <item itemvalue="JavaScript Debug.profil.jsp" />
       </list>
     </recent_temporary>
   </component>
@@ -263,6 +281,11 @@
       <workItem from="1700054961043" duration="1278000" />
       <workItem from="1700058446672" duration="1560000" />
       <workItem from="1700143403382" duration="6926000" />
+      <workItem from="1700475692864" duration="3463000" />
+      <workItem from="1700481038331" duration="380000" />
+      <workItem from="1700579005940" duration="152000" />
+      <workItem from="1700579678506" duration="36000" />
+      <workItem from="1700671926860" duration="7748000" />
     </task>
     <servers />
   </component>

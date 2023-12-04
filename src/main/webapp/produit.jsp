@@ -190,5 +190,9 @@
     </div>
     <jsp:include page="footer.jsp" />
 </div>
+
+<script>
+
+</script>
 </body>
 </html>

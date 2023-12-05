@@ -10,21 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/AddChamp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/DeleteChamp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/Rights.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/editChamp.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/javascript/produit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/media/cross.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/media/loupe.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/Roles.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/produitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/produitServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/produit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/produit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/style/produit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/produit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,21 +84,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;H:/EISTI/Ing2/JEE/Projet/src/main/webapp/style&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "H:/EISTI/Ing2/JEE/Projet/src/main/webapp/style",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="H:\EISTI\Ing2\JEE\Projet\src\main\webapp\style" />
@@ -340,6 +328,7 @@
       <workItem from="1700735588771" duration="8802000" />
       <workItem from="1701276607395" duration="762000" />
       <workItem from="1701342375722" duration="8071000" />
+      <workItem from="1701781155423" duration="753000" />
     </task>
     <task id="LOCAL-00001" summary="randomisation des personnages de la page d'accueil en fonction de leur lane">
       <option name="closed" value="true" />
@@ -357,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701441339777</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <option name="closed" value="true" />
+      <created>1701781268132</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701781268132</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

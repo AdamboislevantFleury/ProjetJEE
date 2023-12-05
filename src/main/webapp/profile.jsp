@@ -1,13 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.example.webapp.DatabaseUtils" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.io.*" %>
 <%@ page import="com.example.webapp.UserList" %>
-<%@ page import="com.example.webapp.UserList" %>
 <%@ page import="com.example.webapp.User" %>
 <%@ page import="java.util.Iterator" %>
+<%@ page import="com.example.webapp.*" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -26,8 +25,17 @@
 
     <h1>Bienvenue sur votre espace profile, Invocateur</h1>
     <div class="container2">
-        <div id="modifying">
+        <div id="modifying"
+        <%
+            /*Rights rights = (Rights)session.getAttribute("rights");
+            if(rights.getRights().get("changeId").equals(false)){
+                out.println("style=\"display:none\"");
+            }
+            */
+        %>
+        >
             <h2>Modifier mes identifiants</h2><br>
+
             <form action="updateEmail" method="post">
                 <label>Nouvelle adresse mail :</label><br>
                 <input type="email" placeholder = "<%out.println(session.getAttribute("email"));%>" name="newEmail"><br>
@@ -84,7 +92,11 @@
                     %>
             </table>
 
-            <div id="adm">
+            <div id="adm" <%
+            if (request.getSession().getAttribute("role").equals(2)) {
+                out.println("style=\"display:none\"");
+            }
+            %>>
                 <legend>For admins</legend>
                 <input type="radio" id="add" name="rights" value="ajouter" checked />
                 <label for="add">Ajouter des droits</label><br>
@@ -103,6 +115,7 @@
                     }
                 %>
                 </ul>
+                <a href="editChamp.jsp">Ajouter/Supprimer un champion</a>
             </div>
         </div>
     </div>

@@ -9,11 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="page produit">
+    <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/AddChamp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/DeleteChamp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/Rights.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/editChamp.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/javascript/produit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/media/cross.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/media/loupe.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/Champions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/Champions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/produit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/produit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/Roles.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/produitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/produitServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/produit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/produit.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +101,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging master&quot;,
     &quot;last_opened_file_path&quot;: &quot;H:/EISTI/Ing2/JEE/Projet/src/main/webapp/style&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -328,7 +339,7 @@
       <workItem from="1700579010924" duration="1043000" />
       <workItem from="1700735588771" duration="8802000" />
       <workItem from="1701276607395" duration="762000" />
-      <workItem from="1701342375722" duration="6642000" />
+      <workItem from="1701342375722" duration="8071000" />
     </task>
     <task id="LOCAL-00001" summary="randomisation des personnages de la page d'accueil en fonction de leur lane">
       <option name="closed" value="true" />
@@ -338,7 +349,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701277063666</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="page produit">
+      <option name="closed" value="true" />
+      <created>1701441339777</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701441339777</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,6 +384,7 @@
     <MESSAGE value="amélioration de l'inde" />
     <MESSAGE value="randomisation des personnages de la page d'accueil en fonction de leur lane" />
     <MESSAGE value="page produit" />
-    <option name="LAST_COMMIT_MESSAGE" value="page produit" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

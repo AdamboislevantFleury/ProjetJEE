@@ -29,6 +29,7 @@ main {
 h2 {
     width: fit-content;
     font-size: 1.5rem;
+    color: white;
     margin-bottom: 20px;
     padding: 5px;
     border-radius: 10px;

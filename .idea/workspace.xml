@@ -328,7 +328,7 @@
       <workItem from="1700735588771" duration="8802000" />
       <workItem from="1701276607395" duration="762000" />
       <workItem from="1701342375722" duration="8071000" />
-      <workItem from="1701781155423" duration="753000" />
+      <workItem from="1701781155423" duration="843000" />
     </task>
     <task id="LOCAL-00001" summary="randomisation des personnages de la page d'accueil en fonction de leur lane">
       <option name="closed" value="true" />
@@ -354,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701781268132</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <option name="closed" value="true" />
+      <created>1701782140357</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701782140357</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

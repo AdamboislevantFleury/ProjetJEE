@@ -37,7 +37,6 @@
             }
           }
         %>
-        <!-- Ajoutez d'autres produits ici -->
       </div>
     </section>
 

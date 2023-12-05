@@ -6,7 +6,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -44,11 +43,14 @@ public class LoginServlet extends HttpServlet {
             if (resultSet.next()) {
                 String id = resultSet.getString("id");
                 String email= resultSet.getString("email");
-                //String role = resultSet.getString("role");
+                //int role = (Integer) resultSet.getString("role");
+                int role = 1;
                 req.getSession().setAttribute("id",id);
                 req.getSession().setAttribute("email",email);
-                //req.getSession().setAttribute("role",role);
                 req.getSession().setAttribute("logged", "true");
+                //req.getSession().setAttribute("role",role);
+                req.getSession().setAttribute("role",role);
+                req.getSession().setAttribute("rights",new Rights(role));
                 req.getRequestDispatcher("/index.jsp").forward(req, resp);
             } else {
                 req.getSession().setAttribute("logged", "false");

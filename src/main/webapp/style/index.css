@@ -1,6 +1,6 @@
 
 body{
-    overflow: scroll;
+    overflow: hidden;
 }
 
 #video-bg{
@@ -18,12 +18,20 @@ body{
     width: 100%;
     height: 100%;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
     padding: 20px;
-    background-image: url(https://images2.alphacoders.com/913/913622.jpg);
-    background-size:cover;
+    /* background-image: url(https://images2.alphacoders.com/913/913622.jpg);
+    background-size:cover; */
+
+    /* overflow-x: auto;
+    overflow-y: auto; */
+
+    flex-grow: 1;
+
 }
 
 h2 {

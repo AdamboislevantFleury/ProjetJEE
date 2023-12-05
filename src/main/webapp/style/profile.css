@@ -57,17 +57,17 @@ input{
     margin-bottom: 7px;
 }
 
-form input[type=email],input[type=password]{
+input[type=email],input[type=password],input[type=text]{
     height:40px;
     width:300px;
     border-radius: 5px;
 }
 
-form input[type=email]:hover,input[type=password]:hover{
+input[type=email]:hover,input[type=password]:hover,input[type=text]:hover{
     border: 3px solid #199bb9;
 }
 
-form input[type=email]:focus,input[type=password]:focus{
+input[type=email]:focus,input[type=password]:focus,input[type=text]:focus{
     outline: none;
     border: 3px solid #199bb9;
 }

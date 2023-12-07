@@ -1,3 +1,73 @@
+.no-product{
+    color: whitesmoke;
+    font-size: 4em;
+    opacity: .5;
+}
+
+
+.search-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.search-bar form{
+    position: relative;
+    height: 50px;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.search-bar form input[type="text"]{
+    position: relative;
+    flex-grow: 2;
+    height: 100%;
+    font-size: 1.75rem;
+    padding-left: 10px;
+    border-radius: inherit;
+    border: none;
+    background-color: transparent;
+}
+
+.search-bar form input[type="submit"]{
+    position: relative;
+    max-height: 100%;
+    aspect-ratio: 1/1;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    background-image: url("/media/loupe.svg");
+    background-size: 90%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    /* transition: all 0.3s ease-in-out; */
+}
+
+.search-bar form a.cancel-search{
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1/1;
+    width: auto;
+    background-color: transparent;
+    background-image: url("/media/cross.svg");
+    background-size: 60%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
 
 
 .container{
@@ -55,4 +125,79 @@
     -moz-box-shadow:    0px 0px 30px 0px #d0a85c;
     box-shadow:         0px 0px 30px 0px #d0a85c;
     transition: all 0.3s ease-in-out;
+}
+
+
+.page-select{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    padding: 30px;
+}
+
+.page-select a:first-child{
+    border-radius: 5px 0 0 5px;
+}
+
+.page-select a:last-child{
+    border-radius: 0 5px 5px 0;
+}
+
+.page-select a, .page-select input{
+    background-color: black;
+    position: relative;
+    display: flex;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2em;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.page-select a.unavailable{
+    color: gray;
+    cursor: not-allowed;
+}
+
+
+.page-select a span{
+    font-size: .5em;
+    align-self: center;
+}
+
+.page-select a:first-child span{
+    margin-left: 10px;
+}
+
+.page-select a:last-child span{
+    margin-right: 10px;
+    text-align: end;
+}
+
+.page-select a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #d0a85c;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.page-select a:not(.unavailable):hover::after{
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.page-select a.current-page{
+    background-color: #d0a85c;
+    color: black;
 }

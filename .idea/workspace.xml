@@ -9,13 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="update">
+    <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="updating CSS + polyvalence des liens">
       <change afterPath="$PROJECT_DIR$/src/main/webapp/javascript/produit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/style/pageArticle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/PanierServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/PanierServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/produitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/produitServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pageArticle.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pageArticle.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/panier.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/panier.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/produit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/produit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/style/produit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/produit.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/profile.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="CSS File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -76,6 +81,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -94,6 +102,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;H:/EISTI/Ing2/JEE/Projet/src/main/webapp/style&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -211,6 +220,7 @@
       </method>
     </configuration>
     <configuration name="Tomcat 10.1.16" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.16" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="WebApp:war exploded">
           <settings>
@@ -332,7 +342,8 @@
       <workItem from="1701276607395" duration="762000" />
       <workItem from="1701342375722" duration="8071000" />
       <workItem from="1701781155423" duration="843000" />
-      <workItem from="1701782216362" duration="642000" />
+      <workItem from="1701782216362" duration="13660000" />
+      <workItem from="1701938597005" duration="7826000" />
     </task>
     <task id="LOCAL-00001" summary="randomisation des personnages de la page d'accueil en fonction de leur lane">
       <option name="closed" value="true" />
@@ -382,7 +393,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701782457787</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update">
+      <option name="closed" value="true" />
+      <created>1701782872806</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701782872806</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update">
+      <option name="closed" value="true" />
+      <created>1701782891471</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701782891471</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,6 +437,7 @@
     <MESSAGE value="randomisation des personnages de la page d'accueil en fonction de leur lane" />
     <MESSAGE value="page produit" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="updating CSS + polyvalence des liens" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating CSS + polyvalence des liens" />
   </component>
 </project>

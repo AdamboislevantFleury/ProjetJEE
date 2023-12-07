@@ -78,7 +78,7 @@
                     }
                 }
             %>
-        </div>
+gi        </div>
     </main>
 =========
 
@@ -111,9 +111,9 @@
             // String champions = (String) response.getHeader("champions");
             //parse the json
             // JSONObject championList = new JSONObject(champions);
-            JSONObject championList = (JSONObject)request.getAttribute("champions");
+            championList = (JSONObject) request.getAttribute("champions");
 
-            int Product_id = 0;
+            Product_id = 0;
 
             //print each key and value
             for (String key : championList.keySet()) {

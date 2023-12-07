@@ -7,36 +7,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title><% out.print(response.getHeader("Title")); %></title>
-    <style>
-        body{
-            background-image: url(<% out.print(request.getAttribute("background_url")); %>);
-    }
-    </style>
-    <script>
-        function addpanier(name) {
-            const xhttp = new XMLHttpRequest();
-            xhttp.open("POST", "http://localhost:8080/WebApp_war/panier", true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.setRequestHeader("type", "insert");
-            xhttp.setRequestHeader("champName", name);
-            xhttp.send();
-
-            //check response
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    //redirect to panier
-                    window.location.href = "http://localhost:8080/WebApp_war/panier.jsp";
-                }
-            };
-
-        }
-    </script>
-</head>
-<body>
-<jsp:include page="header.jsp"/>
 
 <%
 
@@ -49,13 +19,50 @@
     rs.next();
 
 %>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/pageArticle.css">
+    <title><% out.print(response.getHeader("Title")); %></title>
+    <style>
+        body{
+            background-image: url(<% out.print(rs.getString("splashart")); %>);
+    }
+    </style>
+    <script>
+        function addpanier(name) {
+            const url = window.location.href.split("?")[0].split("/").slice(0,-1).join("/");
+            const xhttp = new XMLHttpRequest();
+            xhttp.open("POST", url+"/panier", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.setRequestHeader("type", "insert");
+            xhttp.setRequestHeader("champName", name);
+            xhttp.send();
+
+            //check response
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    //redirect to panier
+                    window.location.href = url+"/panier.jsp";
+                }
+            };
+
+        }
+    </script>
+</head>
+<body>
+<jsp:include page="header.jsp"/>
 
 <div class="container">
-    <img src="<% out.print(rs.getString("image_url"));%>">
-    <h1><% out.print(rs.getString("name"));%></h1>
-    <p><% out.print(rs.getString("description"));%></p>
-    <p><% out.print(rs.getString("prix"));%></p>
-    <button onclick="addpanier('<% out.print(rs.getString("name"));%>')">Acheter</button>
+    <div class="champ">
+        <img src="<% out.print(rs.getString("image_url"));%>">
+        <h1><% out.print(rs.getString("name"));%></h1>
+        <p><% out.print(rs.getString("lane"));%></p>
+        <p><% out.print(rs.getString("description"));%></p>
+        <p class="price"><% out.print(rs.getString("prix"));%> €</p>
+    </div>
+        <button class="btn" onclick="addpanier('<% out.print(rs.getString("name"));%>')"><span>Acheter</span></button>
 </div>
 
 

@@ -50,15 +50,7 @@ public class LoginServlet extends HttpServlet {
                 req.getSession().setAttribute("role",role);
                 //Récupération des droits et inscription dans la classe Rights pour les utilisations sur le site
                 Rights r = Rights.getInstance(id);
-                String query = "SELECT * FROM "+databaseUtils.getDatabase() +".permissions WHERE id_user = "+id;
-                ResultSet rs = databaseUtils.sendQuery(query);
-                if(rs.next()){
-                    r.setRights("id_user",id);
-                    r.setRights("add",rs.getString("add"));
-                    r.setRights("delete",rs.getString("delete"));
-                    r.setRights("edit",rs.getString("edit"));
-                    r.setRights("promote",rs.getString("promote"));
-                }
+                r.affichage();
                 req.getRequestDispatcher("/index.jsp").forward(req, resp);
             } else {
                 req.getSession().setAttribute("logged", "false");

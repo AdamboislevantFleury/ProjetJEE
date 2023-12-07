@@ -92,30 +92,25 @@
                     %>
             </table>
 
-            <div id="adm" <%
-            if (request.getSession().getAttribute("role").equals(2)) {
-                out.println("style=\"display:none\"");
-            }
-            %>>
-                <legend>For admins</legend>
-                <input type="radio" id="add" name="rights" value="ajouter" checked />
-                <label for="add">Ajouter des droits</label><br>
-                <input type="radio" id="remove" name="rights" value="retirer" checked />
-                <label for="remove">Retirer des droits</label><br>
-                <input type="radio" id="change" name="rights" value="changer" checked />
-                <label for="change">Changer les droits</label><br>
-                <input type="text" id="searchBar" placeholder="Rechercher un utilisateur" onkeyup="filterUsers()"/><br>
-                <ul id="userList">
+            <div id="adm">
                 <%
-                    UserList users = new UserList();
-                    Iterator<String> it = users.getUserList().iterator();
-                    while(it.hasNext()){
-                        String email = it.next();
-                        out.println("<li>"+email+"</li>");
+                    Rights r = null;
+                    try{
+                        r=Rights.getInstance((String)request.getSession().getAttribute("id"));
+                    }
+                    catch(SQLException e){
+                        throw new RuntimeException(e);
+                    }
+                    if(r.getCollection().get("edit").equals("1")){
+                        out.println("<a href=\"editRights.jsp\" id=\"editLink\">Modifiez les droits d'un utilisateur</a><br>");
+                    }
+                    if(r.getCollection().get("promote").equals("1")){
+                        out.println("<a href=\"editAdmin.jsp\" id=\"editLink\">Ajoutez un admin</a><br>");
+                    }
+                    if(r.getCollection().get("add").equals("1")||r.getCollection().get("remove").equals("1")){
+                        out.println("<a href=\"editChamp.jsp\" id=\"editLink\">Ajoutez / Supprimez un champion</a><br>");
                     }
                 %>
-                </ul>
-                <a href="editChamp.jsp">Ajouter/Supprimer un champion</a>
             </div>
         </div>
     </div>
@@ -124,6 +119,5 @@
 
 
 <jsp:include page="footer.jsp"/>
-<script src="javascript/profile.js"></script>
 </body>
 </html>

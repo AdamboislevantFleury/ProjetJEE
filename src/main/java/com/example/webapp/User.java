@@ -45,12 +45,4 @@ public class User {
         return roles;
     }
 
-    public void setRole(String role,Boolean value) {
-        if(roles.containsKey(role)) {
-            roles.replace(role, roles.get(role), value);
-        }
-        else{ // à modifier car pas sur de vouloir ajouter de nouveaux roles, en cas d'erreur -> probleme
-            roles.put(role,value);
-        }
-    }
 }

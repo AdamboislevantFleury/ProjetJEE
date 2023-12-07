@@ -19,19 +19,23 @@ public class AddChamp extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String champ = req.getParameter("name");
+        String id = req.getParameter("id");
+        String name = req.getParameter("name");
         String descr = req.getParameter("description");
         String title = req.getParameter("title");
         String image = req.getParameter("image");
-
+        String lane = req.getParameter("lane");
+        String type = req.getParameter("type");
+        String splash = req.getParameter("splash");
+        String price = req.getParameter("price");
         try {
             DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
-            String query = "INSERT INTO "+databaseUtils.getDatabase()+".champions (name,title,description,image) VALUES ('" + champ + "', '" + descr + "', '" + title + "', '" + image + "')";
+            String query = "INSERT INTO "+databaseUtils.getDatabase()+".champions VALUES ('" + id+ "', '"+ name + "', '" + type + "', '" + image + "', '" + splash + "', '" + title + "', '" + price + "', '" + lane + "', '" + descr +"')";
             ResultSet resultSet = null;
             resultSet = databaseUtils.sendQuery(query);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
+        req.getRequestDispatcher("/produit.jsp").forward(req, resp);
     }
 }

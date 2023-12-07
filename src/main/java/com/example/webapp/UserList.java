@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserList {
-        private static List<String> userList = new ArrayList<>();
+        private List<String> userList = new ArrayList<>();
 
         public UserList() throws SQLException {
             DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
@@ -18,6 +18,6 @@ public class UserList {
             }
         }
         public List<String> getUserList() throws SQLException {
-            return userList;
+            return new UserList().userList;
         }
 }

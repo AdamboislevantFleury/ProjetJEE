@@ -55,7 +55,7 @@ public class LoginServlet extends HttpServlet {
                 if(rs.next()){
                     r.setRights("id_user",id);
                     r.setRights("add",rs.getString("add"));
-                    r.setRights("remove",rs.getString("remove"));
+                    r.setRights("delete",rs.getString("delete"));
                     r.setRights("edit",rs.getString("edit"));
                     r.setRights("promote",rs.getString("promote"));
                 }

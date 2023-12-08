@@ -10,17 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="updating CSS + polyvalence des liens">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/javascript/produit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/style/pageArticle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/PanierServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/PanierServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/produitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/produitServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pageArticle.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pageArticle.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/panier.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/panier.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/produit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/produit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/produit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/produit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/profile.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -343,7 +334,7 @@
       <workItem from="1701342375722" duration="8071000" />
       <workItem from="1701781155423" duration="843000" />
       <workItem from="1701782216362" duration="13660000" />
-      <workItem from="1701938597005" duration="7826000" />
+      <workItem from="1701938597005" duration="11461000" />
     </task>
     <task id="LOCAL-00001" summary="randomisation des personnages de la page d'accueil en fonction de leur lane">
       <option name="closed" value="true" />
@@ -409,7 +400,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701782891471</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="updating CSS + polyvalence des liens">
+      <option name="closed" value="true" />
+      <created>1701972624243</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701972624243</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -56,10 +56,11 @@
             quantity.innerHTML = parseInt(quantity.innerHTML) + 1;
 
             //update the total price
-            const prixTotal = document.getElementById("prix-total");
+            const prixTotal_el = document.querySelector("#prix-total");
+            const prixTotal = document.querySelector("#prix-total .price");
             const prixChamp = document.getElementById("price-"+name);
-            newPrice = parseInt(prixTotal.innerHTML.split(" ")[2]) + parseInt(prixChamp.innerHTML);
-            prixTotal.innerHTML = "Total : "+newPrice;
+            newPrice = parseInt(prixTotal.innerHTML) + parseInt(prixChamp.innerHTML);
+            prixTotal_el.innerHTML = 'Total :  <span class="price">'+newPrice+'</span>'
 
           } else {
             console.log('Request failed.  Returned status of ' + xhr.status);
@@ -83,10 +84,12 @@
             quantity.innerHTML = parseInt(quantity.innerHTML) - 1;
 
             //update the total price
-            const prixTotal = document.getElementById("prix-total");
+            const prixTotal_el = document.querySelector("#prix-total");
+            const prixTotal = document.querySelector("#prix-total .price");
             const prixChamp = document.getElementById("price-"+name);
-            newPrice = parseInt(prixTotal.innerHTML.split(" ")[2]) - parseInt(prixChamp.innerHTML);
-            prixTotal.innerHTML = "Total : "+newPrice;
+            newPrice = parseInt(prixTotal.innerHTML) - parseInt(prixChamp.innerHTML);
+            console.log(prixTotal, prixChamp, newPrice)
+            prixTotal_el.innerHTML = 'Total : <span class="price">'+newPrice+'</span>';
 
           } else {
             console.log('Request failed.  Returned status of ' + xhr.status);

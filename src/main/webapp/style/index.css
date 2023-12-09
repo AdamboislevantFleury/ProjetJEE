@@ -24,16 +24,21 @@ main {
     padding: 20px;
     background-image: url(https://images2.alphacoders.com/913/913622.jpg);
     background-size:cover;
+    min-height: 1080px;
 }
 
-h2 {
+h1,h2 {
+    @font-face { font-family: FritzQuadrata; src: url('font/Friz Quadrata Regular.ttf'); }
+    font-family: FritzQuadrata, serif;
+    color: #d0a85c;
     width: fit-content;
     font-size: 1.5rem;
-    color: white;
     margin-bottom: 20px;
     padding: 5px;
     border-radius: 10px;
     backdrop-filter: blur(20px);
+    text-align: center;
+
 }
 
 .price {
@@ -58,6 +63,7 @@ h2 {
     padding: 20px;
     scrollbar-width: thin;
     scrollbar-color: #d0a85c transparent;
+    margin: 0 75px;
 
     &::-webkit-scrollbar {
         width: 12px;
@@ -104,4 +110,7 @@ h2 {
 .scroll-child {
     scroll-snap-align: start;
     scroll-margin: 10px;
+}
+#compo{
+    margin-top: 100px;
 }

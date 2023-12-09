@@ -25,15 +25,7 @@
 
     <h1>Bienvenue sur votre espace profile, Invocateur</h1>
     <div class="container2">
-        <div id="modifying"
-        <%
-            /*Rights rights = (Rights)session.getAttribute("rights");
-            if(rights.getRights().get("changeId").equals(false)){
-                out.println("style=\"display:none\"");
-            }
-            */
-        %>
-        >
+        <div id="modifying">
             <h2>Modifier mes identifiants</h2><br>
 
             <form action="updateEmail" method="post">
@@ -101,14 +93,14 @@
                     catch(SQLException e){
                         throw new RuntimeException(e);
                     }
-                    if(r.getCollection().get("edit").equals("1")){
-                        out.println("<a href=\"editRights.jsp\" id=\"editLink\">Modifiez les droits d'un utilisateur</a><br>");
+                    if(r.getCollection().get("edit").equals("1")||request.getSession().getAttribute("role").equals("1")){
+                        out.println("<a href=\"editRights.jsp\" id=\"editLink\">Modifier les droits d'un utilisateur</a><br>");
                     }
-                    if(r.getCollection().get("promote").equals("1")){
-                        out.println("<a href=\"editAdmin.jsp\" id=\"editLink\">Ajoutez un admin</a><br>");
+                    if(r.getCollection().get("promote").equals("1")||request.getSession().getAttribute("role").equals("1")){
+                        out.println("<a href=\"editAdmin.jsp\" id=\"editLink\">Ajouter un admin</a><br>");
                     }
-                    if(r.getCollection().get("add").equals("1")||r.getCollection().get("remove").equals("1")){
-                        out.println("<a href=\"editChamp.jsp\" id=\"editLink\">Ajoutez / Supprimez un champion</a><br>");
+                    if(r.getCollection().get("add").equals("1")||r.getCollection().get("remove").equals("1")||request.getSession().getAttribute("role").equals("1")){
+                        out.println("<a href=\"editChamp.jsp\" id=\"editLink\">Ajouter / Supprimers un champion</a><br>");
                     }
                 %>
             </div>

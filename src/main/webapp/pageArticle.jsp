@@ -6,7 +6,7 @@
   Time: 15:14
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 
 <%
 
@@ -44,7 +44,7 @@
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     //redirect to panier
-                    window.location.href = url+"/panier.jsp";
+                    window.location.href = url+"/panier";
                 }
             };
 

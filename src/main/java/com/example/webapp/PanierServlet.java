@@ -74,6 +74,8 @@ public class PanierServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
 
+        resp.sendRedirect("panier.jsp");
+
     }
 
     @Override
@@ -86,6 +88,9 @@ public class PanierServlet extends HttpServlet {
             resp.sendRedirect("connexion.jsp");
             return;
         }
+
+        // resp.sendRedirect("panier.jsp");
+        req.getRequestDispatcher("panier.jsp").forward(req, resp);
     }
 
     @Override

@@ -16,6 +16,12 @@
 }
 
 
+.price {
+    font-weight: bold;
+    color: #09cae6;
+    text-shadow: #09cae6 1px 0 10px;
+}
+
 .no-product{
     color: whitesmoke;
     font-size: 4em;

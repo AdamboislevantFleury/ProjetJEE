@@ -12,7 +12,7 @@
 <%@ page import="com.example.webapp.DatabaseUtils" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <html>
 <head>
   <title>Title</title>

@@ -28,6 +28,8 @@
     <style>
         body{
             background-image: url(<% out.print(rs.getString("splashart")); %>);
+            background-size: cover;
+            background-position: right;
     }
     </style>
     <script>
@@ -64,7 +66,7 @@
     </div>
         <button class="btn" onclick="addpanier('<% out.print(rs.getString("name"));%>')"><span>Acheter</span></button>
 </div>
-
+<% db.closeConnection();%>
 
 <jsp:include page="footer.jsp"/>
 </body>

@@ -17,6 +17,7 @@
 <head>
   <title>Title</title>
   <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="style/panier.css">
   <script>
     const url = window.location.href.split("?")[0].split("/").slice(0,-1).join("/");
 
@@ -50,7 +51,7 @@
         //check response
         xhr.onload = function () {
           if (xhr.status === 200) {
-            console.log(xhr.responseText);
+            //console.log(xhr.responseText);
             const quantity = document.getElementsByClassName(name+"-bold")[0];
             quantity.innerHTML = parseInt(quantity.innerHTML) + 1;
 
@@ -159,17 +160,9 @@
           out.println("</div>");
           out.println("</div>");
 
-            totalPanier += rs.getInt("prix") * rs.getInt("quantite");
+            totalPanier +=  rs.getInt("prix") * Integer.parseInt(rs.getString("quantite"));
 
         }
-
-        out.println("<div class='total'>");
-        out.println("<h3 id ='prix-total'>Total : "+totalPanier+"</h3>");
-        out.println("</div>");
-
-        out.println("<div class='acheter'>");
-        out.println("<button onClick='achat()'>Acheter</button>");
-        out.println("</div>");
 
       }catch (SQLException e){
         e.printStackTrace();
@@ -179,9 +172,17 @@
 
     %>
 
-    <p>Vous avez actuellement <span class="bold">0</span> articles dans votre panier.</p>
+    <%-- <p>Vous avez actuellement <span class="bold">0</span> articles dans votre panier.</p> --%>
 
   </div>
+
+  <div class='total'>
+    <h3 id ='prix-total'>Total : <span class="price"><%=totalPanier%></span></h3>
+    <div class='acheter'>
+      <button onClick='achat()'>Acheter</button>
+    </div>
+  </div>
+  
 </main>
 <jsp:include page="footer.jsp" />
 </body>

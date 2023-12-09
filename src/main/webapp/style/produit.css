@@ -1,7 +1,32 @@
+#video-bg{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+.price {
+    font-weight: bold;
+    color: #09cae6;
+    text-shadow: #09cae6 1px 0 10px;
+}
+
 .no-product{
     color: whitesmoke;
     font-size: 4em;
     opacity: .5;
+    margin: 50px;
 }
 
 

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.sql.*" %>
@@ -76,7 +76,7 @@
                         ResultSet rs = db.sendQuery(req);
                         while(rs.next()){
                             String id = rs.getString("id_champion");
-                            String champImgPath = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/"+id+".png";
+                            String champImgPath = rs.getString("image_url");
                             out.println("<tr>");
                             out.println("<td><img id='img' src="+champImgPath+" alt="+rs.getString("name")+"></td>");
                             out.println("<td>"+rs.getString("name")+"</td>");
@@ -101,13 +101,13 @@
                     catch(SQLException e){
                         throw new RuntimeException(e);
                     }
-                    if(r.getCollection().get("edit").equals("1")){
+                    if(r.getCollection().get("edit") != null && r.getCollection().get("edit").equals("1")){
                         out.println("<a href=\"editRights.jsp\" id=\"editLink\">Modifiez les droits d'un utilisateur</a><br>");
                     }
-                    if(r.getCollection().get("promote").equals("1")){
+                    if(r.getCollection().get("edit") != null && r.getCollection().get("promote").equals("1")){
                         out.println("<a href=\"editAdmin.jsp\" id=\"editLink\">Ajoutez un admin</a><br>");
                     }
-                    if(r.getCollection().get("add").equals("1")||r.getCollection().get("remove").equals("1")){
+                    if(r.getCollection().get("edit") != null && (r.getCollection().get("add").equals("1")||r.getCollection().get("remove").equals("1"))){
                         out.println("<a href=\"editChamp.jsp\" id=\"editLink\">Ajoutez / Supprimez un champion</a><br>");
                     }
                 %>

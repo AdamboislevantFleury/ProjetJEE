@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="problème double page produit réglé">
+    <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="nouveau background article + fermeture des connexions à la DB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pageArticle.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pageArticle.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -334,7 +334,7 @@
       <workItem from="1701342375722" duration="8071000" />
       <workItem from="1701781155423" duration="843000" />
       <workItem from="1701782216362" duration="13660000" />
-      <workItem from="1701938597005" duration="20687000" />
+      <workItem from="1701938597005" duration="21425000" />
     </task>
     <task id="LOCAL-00001" summary="randomisation des personnages de la page d'accueil en fonction de leur lane">
       <option name="closed" value="true" />
@@ -416,7 +416,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702043781303</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="nouveau background article + fermeture des connexions à la DB">
+      <option name="closed" value="true" />
+      <created>1702135847922</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1702135847922</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,6 +454,7 @@
     <MESSAGE value="update" />
     <MESSAGE value="updating CSS + polyvalence des liens" />
     <MESSAGE value="problème double page produit réglé" />
-    <option name="LAST_COMMIT_MESSAGE" value="problème double page produit réglé" />
+    <MESSAGE value="nouveau background article + fermeture des connexions à la DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="nouveau background article + fermeture des connexions à la DB" />
   </component>
 </project>

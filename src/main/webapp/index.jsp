@@ -36,6 +36,7 @@
         <%
             }
           }
+          db.closeConnection();
         %>
       </div>
     </section>

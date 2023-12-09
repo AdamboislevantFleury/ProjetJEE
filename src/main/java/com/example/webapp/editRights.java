@@ -49,10 +49,12 @@ public class editRights extends HttpServlet {
                     //pour éviter que rights pointe vers l'id du user edité (violation du principe de singleton)
                     r = new Rights((String) req.getSession().getAttribute("id")) ;
                 }
+                db.closeConnection();
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }
+
         req.getRequestDispatcher("/profile.jsp").forward(req, resp);
     }
 }

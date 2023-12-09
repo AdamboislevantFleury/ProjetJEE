@@ -24,6 +24,7 @@ public class Rights {
             collection.put("promote",rs.getString("promote"));   //promouvoir client en admin
             collection.put("id_user",rs.getString("id_user")); //identifiant du user
         }
+        db.closeConnection();
     }
 
     public void setRights(String right,String value) throws SQLException {
@@ -32,6 +33,7 @@ public class Rights {
         String query = "UPDATE "+db.getDatabase() +".permissions SET "+right+" = "+value+" WHERE id_user = "+collection.get("id_user");
         ResultSet rs = null;
         rs = db.sendQuery(query);
+        db.closeConnection();
     }
 
     public void setRights(HashMap<String,String> map) throws SQLException {

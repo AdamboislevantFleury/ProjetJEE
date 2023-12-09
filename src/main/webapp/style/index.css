@@ -15,53 +15,35 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    /* background-color: rgba(0,0,0,0.5); */
     width: 100%;
     height: 100%;
     overflow-y: auto;
 }
 
 main {
-    /* background-color: #fff; */
     padding: 20px;
-    /* background-image: url(https://images2.alphacoders.com/913/913622.jpg);
-    background-size:cover; */
-
-    /* overflow-x: auto;
-    overflow-y: auto; */
-
+    background-image: url(https://images2.alphacoders.com/913/913622.jpg);
+    background-size:cover;
 }
 
 h2 {
+    width: fit-content;
     font-size: 1.5rem;
+    color: white;
     margin-bottom: 20px;
-}
-
-.product-carousel a {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    flex: 0 0 300px;
-    margin-right: 20px;
-    scroll-snap-align: start;
-    padding-right: 20px;
-    padding-left: 20px;
-    transition: transform 0.3s ease-in-out;
-    background-color: black;
-}
-
-.product-carousel a img {
-    max-width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    backdrop-filter: blur(20px);
 }
 
 .price {
     font-weight: bold;
-    color: #f00;
+    color: #09cae6;
+    text-shadow: #09cae6 1px 0 10px;
 }
 
 .discount-price {
-    color: #f00;
+    color: white;
 }
 
 .original-price {
@@ -74,8 +56,52 @@ h2 {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #d0a85c transparent;
+
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #d0a85c;
+        border-radius: 10px;
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}
+
+.product-carousel a {
+    text-decoration: none;
+    color: #d0a85c;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    flex: 0 0 300px;
+    margin-right: 20px;
+    scroll-snap-align: start;
+    background: linear-gradient(225deg, transparent 45px, #08141c 0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-carousel a img {
+    max-width: 100%;
 }
 
 .product-carousel a:hover {
     transform: scale(1.05);
+}
+
+.scroll-container {
+    scroll-snap-type: y mandatory;
+    scroll-padding: 30px;
+}
+
+.scroll-child {
+    scroll-snap-align: start;
+    scroll-margin: 10px;
 }

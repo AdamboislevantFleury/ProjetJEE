@@ -13,6 +13,17 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
+}
+
+.header:after {
+    content: '';
+    display: block;
+    width: 90%;
+    height: 30px;
+    margin: -30px auto 0;
+    border-radius: 120px / 10px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,.6);
 }
 
 /* Style du logo */
@@ -83,6 +94,12 @@ nav a {
     color: #fff;
     text-decoration: none;
     padding-right: 10px;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.user-actions a:hover{
+    background-color: #555555;
 }
 
 footer {
@@ -90,4 +107,13 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
+}
+
+.no-select{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }

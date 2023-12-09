@@ -76,6 +76,17 @@ public class PanierServlet extends HttpServlet {
 
     }
 
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String id_user = (String) req.getSession().getAttribute("id");
+        //check if id_panier is null
+        if (id_user == null) {
+            //ask for connection
+            resp.sendRedirect("connexion.jsp");
+            return;
+        }
+    }
 
     @Override
     public void destroy() {

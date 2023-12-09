@@ -27,7 +27,7 @@ public class Champions {
 
             if (resultSet.next()) {
                 JSONObject champion = new JSONObject();
-                champion.put("Product_id",resultSet.getString("idChampions"));
+                champion.put("Product_id", resultSet.getString("idChampions"));
                 champion.put("name", resultSet.getString("name"));
                 champion.put("image_url", resultSet.getString("image_url"));
                 champion.put("role", resultSet.getString("role"));
@@ -40,4 +40,6 @@ public class Champions {
         }
 
         return null;
+
+    }
 }

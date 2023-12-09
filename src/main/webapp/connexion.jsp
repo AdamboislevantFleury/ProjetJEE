@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/styles.css">
     <link rel="stylesheet" href="style/connexion.css">
-    <title>Profil</title>
+    <title>Connection</title>
 </head>
 <body>
 <jsp:include page="header.jsp" />

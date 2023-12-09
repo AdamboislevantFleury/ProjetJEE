@@ -1,0 +1,130 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+body{
+    min-height: 200vh;
+    color:  #C4A15B;
+    background-color: #010b14 !important;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bubbles{
+    position: relative;
+    display: flex;
+    z-index:-1;
+}
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #199bb9;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #02314f,
+    0 0 50px #199bb9,
+    0 0 100px #199bb9;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s/var(--i));
+    opacity: 60%;
+}
+@keyframes animate {
+    0%
+    {
+        transform:translateY(100vh) scale(0);
+    }
+    100%
+    {
+        transform:translateY(-10vh) scale(1);
+    }
+}
+
+h1{
+    text-align:center;
+
+}
+
+input{
+    margin-top: 5px;
+    margin-bottom: 7px;
+}
+
+input[type=email],input[type=password],input[type=text]{
+    height:40px;
+    width:300px;
+    border-radius: 5px;
+}
+
+input[type=email]:hover,input[type=password]:hover,input[type=text]:hover{
+    border: 3px solid #199bb9;
+}
+
+input[type=email]:focus,input[type=password]:focus,input[type=text]:focus{
+    outline: none;
+    border: 3px solid #199bb9;
+}
+
+form input[type=submit]{
+    height:25px;
+    width: 70px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+form input[type=submit]:hover{
+    border-color: #199bb9;
+    outline: none;
+    background-color: #199bb9;
+}
+
+#img{
+    max-height:50px;
+    max-width: 50px;
+    border:1px solid #199bb9;
+}
+
+table{
+    margin-top:10px;
+    margin-left:-30px;
+    border: 1px solid #199bb9;
+    border-spacing: 30px 10px;
+    text-align: center;
+
+}
+
+#cmdLine{
+    background-color: black;
+}
+
+#cmdLine{
+    background-color: #010514;
+}
+.container2{
+    margin-top:5%;
+    margin-left: 5%;
+}
+
+#modifying{
+
+}
+
+#achats{
+    margin-top:-20%;
+    margin-left: 30%;
+}
+
+#adm{
+    position:absolute;
+    right: 0;
+    top:0;
+    margin-right: 5%;
+    margin-top:10%;
+}

@@ -19,7 +19,7 @@ public class Rights {
         rs = db.sendQuery(query);
         if(rs.next()){
             collection.put("add",rs.getString("add"));  //ajouter un personnage
-            collection.put("delete",rs.getString("delete"));   //supprimer un personnage
+            collection.put("remove",rs.getString("remove"));   //supprimer un personnage
             collection.put("edit",rs.getString("edit"));  //modifier les droits d'un client
             collection.put("promote",rs.getString("promote"));   //promouvoir client en admin
             collection.put("id_user",rs.getString("id_user")); //identifiant du user
@@ -36,11 +36,7 @@ public class Rights {
 
     public void setRights(HashMap<String,String> map) throws SQLException {
         for(Map.Entry<String,String> mapEntry : map.entrySet()){
-            collection.put(mapEntry.getKey(),mapEntry.getValue());
-            DatabaseUtils db = DatabaseUtils.getInstance();
-            String query = "UPDATE "+db.getDatabase() +".permissions SET "+mapEntry.getKey()+" = "+mapEntry.getValue()+" WHERE id_user = "+collection.get("id_user");
-            ResultSet rs = null;
-            rs = db.sendQuery(query);
+            this.setRights(mapEntry.getKey(), mapEntry.getValue());
         }
     }
 
@@ -57,10 +53,10 @@ public class Rights {
     }
 
     public void affichage(){
-        System.out.println(collection.get("id_user"));
-        System.out.println(collection.get("add"));
-        System.out.println(collection.get("delete"));
-        System.out.println(collection.get("edit"));
-        System.out.println(collection.get("promote"));
+        System.out.println("id : "+collection.get("id_user"));
+        System.out.println("ajouter : "+collection.get("add"));
+        System.out.println("supprimer : "+collection.get("remove"));
+        System.out.println("edit : "+collection.get("edit"));
+        System.out.println("promote : "+collection.get("promote"));
     }
 }

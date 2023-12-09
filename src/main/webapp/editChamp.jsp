@@ -1,4 +1,7 @@
-<%--
+<%@ page import="com.example.webapp.Rights" %>
+<%@ page import="com.example.webapp.Champions" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="java.sql.SQLException" %><%--
   Created by IntelliJ IDEA.
   User: Marwane
   Date: 03/12/2023
@@ -15,24 +18,58 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
+    <div id="remove">
+            <p>Supprimer un champion</p>
+            <form action="deleteChamp" method="post">
+                <select name = "user">
+                    <%
+                        Champions champList = new Champions();
+                        Iterator<String> it = champList.getChampList().iterator();
+                        while(it.hasNext()){
+                            String name = it.next();
+                            out.println("<option>"+name+"</option>");
+                        }
+                    %>
+                </select><br>
+                <input type="submit" value="Supprimer">
+            </form>
+    </div>'
 
-<p>Supprimer un champion</p>
-<form action="deleteChamp" method="post">
-    <input type="text" name="deletedChamp" placeholder="Champion à supprimer"><br>
-    <input type="button" value="Supprimer">
-</form>
+    <div id="add">
+            <p>Ajouter un champion</p>
+            <form action="addChamp" method="post">
+                <label></label>
+                <input type="text" name="id" placeholder="id du champion (>200)"><br>
+                <input type="text" name="name" placeholder="nom du champion"><br>
+                <input type="text" name="title" placeholder="titre du champion"><br>
+                <input type="text" name="description" placeholder="description du champion"><br>
+                <input type="text" name="lane" placeholder="Voie sur lequel se joue le champion"><br>
+                <input type="text" name="role" placeholder="quel est le role du champion"><br>
+                <input type="text" name="price" placeholder="prix du champion"><br>
+                <input type="text" name="image" placeholder="lien image du champion"><br>
+                <input type="text" name="splash" placeholder="splash art du champion"><br>
 
-<p>Ajouter un champion</p>
-<form action="addChamp" method="post">
-    <label></label>
-    <input type="text" name="name" placeholder="nom du champion"><br>
-    <input type="text" name="title" placeholder="titre du champion"><br>
-    <input type="text" name="description" placeholder="description du champion"><br>
-    <input type="text" name="image" placeholder="lien image du champion"><br>
-    <input type="button" value="Ajouter">
+                <input type="submit" value="Ajouter">
+            </form>
+    </div>
 
-</form>
+
 
 <jsp:include page="footer.jsp"/>
+
+<script>
+    <%
+        Rights r = null;
+        try{
+            r=Rights.getInstance((String)request.getSession().getAttribute("id"));
+        }
+        catch(SQLException e){
+            throw new RuntimeException(e);
+        }
+        %>
+    if(<% r.getCollection().get("remove").equals("0");%>){
+        document.getElementById("remove").style.display="none";
+    }
+</script>
 </body>
 </html>

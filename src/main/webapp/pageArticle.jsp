@@ -28,6 +28,8 @@
     <style>
         body{
             background-image: url(<% out.print(rs.getString("splashart")); %>);
+            background-size: cover;
+            background-position: right;
     }
     </style>
     <script>

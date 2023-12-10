@@ -23,7 +23,12 @@
   <artifactId>json</artifactId>
   <version>20230618</version>
 </dependency>
-<dependency>
+  <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>javax.mail</artifactId>
+      <version>1.5.5</version>
+  </dependency>
+      <dependency>
       <groupId>jakarta.platform</groupId>
       <artifactId>jakarta.jakartaee-api</artifactId>
       <version>9.1.0</version>

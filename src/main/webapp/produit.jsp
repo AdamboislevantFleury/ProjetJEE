@@ -212,7 +212,6 @@
         }
     %>
     </div>
->>>>>>>>> Temporary merge branch 2
     <jsp:include page="footer.jsp" />
 </div>
 

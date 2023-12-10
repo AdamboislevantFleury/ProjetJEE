@@ -7,25 +7,27 @@ import java.util.List;
 
 public class Champions {
     private List<String> champList = new ArrayList<>();
+    private static List<String> selectedChamp = new ArrayList<>();
+
     public Champions() throws SQLException {
-          DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
-          String query = "SELECT * FROM "+databaseUtils.getDatabase()+".champions";
-          ResultSet resultSet = null;
-          resultSet = databaseUtils.sendQuery(query);
-          while(resultSet.next()){
-              champList.add(resultSet.getString("name"));
-          }
-      }
+        DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
+        String query = "SELECT * FROM " + databaseUtils.getDatabase() + ".champions";
+        ResultSet resultSet = null;
+        resultSet = databaseUtils.sendQuery(query);
+        while (resultSet.next()) {
+            champList.add(resultSet.getString("name"));
+        }
+    }
+
     public List<String> getChampList() throws SQLException {
-          return new Champions().champList;
+        return new Champions().champList;
     }
 
     public static JSONObject getRandomChampionByLane(DatabaseUtils db, String role) {
         try {
             String query = "SELECT * FROM champions WHERE role = '" + role + "' ORDER BY RAND() LIMIT 1";
             ResultSet resultSet = db.sendQuery(query);
-
-            if (resultSet.next()) {
+            if(resultSet.next()) {
                 JSONObject champion = new JSONObject();
                 champion.put("Product_id", resultSet.getString("idChampions"));
                 champion.put("name", resultSet.getString("name"));
@@ -35,11 +37,10 @@ public class Champions {
                 champion.put(("prix"), resultSet.getString("prix"));
                 return champion;
             }
-        } catch (SQLException e) {
+    } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return null;
-
     }
 }

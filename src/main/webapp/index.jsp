@@ -15,46 +15,46 @@
 <body>
 <jsp:include page="header.jsp" />
 <main>
-  <div class="container">
-    <section id="featured-products">
-      <h2>Produits en Vedette</h2>
-      <div class="product-carousel">
-        <%
-          DatabaseUtils db = new DatabaseUtils();
-          String[] roles = {"Top", "Jungle", "Mid", "Support", "ADC"};
 
-          for (String role : roles) {
-            JSONObject champion = Champions.getRandomChampionByLane(db, role);
+  <div class="container">
+    <h1>Bienvenue dans notre boutique invocateur</h1>
+    <h2>Retrouvez ici les compositions tendances du moment</h2>
+    <section id="featured-products">
+
+      <%
+        DatabaseUtils db = new DatabaseUtils();
+        String[] roles = {"Top", "Jungle", "Mid", "Support", "ADC"};
+        int j;
+        for(j=0;j<3;j++){
+
+      %>
+
+      <%out.println("<h1 id=\"compo\">Composition n°"+(j+1)+"</h1>");%>
+      <div class="product-carousel">
+          <%
+            for(int i=0;i<5;i++){
+            JSONObject champion = Champions.getRandomChampionByLane(db, roles[i]);
             if (champion != null) {
-        %>
+          %>
         <a href="page-article?champName=<%= champion.getString("name") %>" class="product">
           <img src="<%= champion.getString("image_url") %>" alt="<%= champion.getString("name") %>">
           <h3><%= champion.getString("name") %></h3>
           <p><%= champion.getString("role") %></p>
           <span class="price"><%= champion.getString("prix") %> €</span>
         </a>
+
         <%
-            }
-          }
-        %>
-      </div>
-    </section>
-
-    <section id="special-offers">
-      <h2>Offres Spéciales</h2>
-      <div class="offer">
-        <img src="offer1.jpg" alt="Offre 1">
-        <h3>Offre Spéciale 1</h3>
-        <p>Description de l'offre spéciale 1.</p>
-        <span class="discount-price">$14.99</span>
-        <span class="original-price">$19.99</span>
-        <a href="#">Détails</a>
+              }
+            }%>
       </div>
 
-      <!-- Ajoutez d'autres offres spéciales ici -->
+      <%}%>
+
+
     </section>
   </div>
 </main>
+
 
 <jsp:include page="footer.jsp" />
 </body>

@@ -25,32 +25,34 @@
 
     <h1>Bienvenue sur votre espace profile, Invocateur</h1>
     <div class="container2">
-        <div id="modifying"
-        <%
-            /*Rights rights = (Rights)session.getAttribute("rights");
-            if(rights.getRights().get("changeId").equals(false)){
-                out.println("style=\"display:none\"");
-            }
-            */
-        %>
-        >
-            <h2>Modifier mes identifiants</h2><br>
+        <div>
+            <div id="modifying">
+                <h2>Modifier mes identifiants</h2><br>
 
-            <form action="updateEmail" method="post">
-                <label>Nouvelle adresse mail :</label><br>
-                <input type="email" placeholder = "<%out.println(session.getAttribute("email"));%>" name="newEmail"><br>
-                <input type="submit" value="Modifier">
-            </form>
-            <br>
-            <form action ="updatePassword" method="post">
-                <label>Nouveau mot de passe :</label><br>
-                <input type="password" placeholder="Mot de passe" name="newPassword1"><br>
-                <label>Confirmer mot de passe :</label><br>
-                <input type="password" placeholder="Mot de passe" name="newPassword2"><br>
-                <input type="submit" value="Modifier">
-            </form>
-        </div>
-
+                <form action="updateEmail" method="post">
+                    <label>Nouvelle adresse mail :</label><br>
+                    <input type="email" placeholder = "<%out.println(session.getAttribute("email"));%>" name="newEmail"><br>
+                    <input type="submit" value="Modifier">
+                </form>
+                <br>
+                <form action ="updatePassword" method="post">
+                    <label>Nouveau mot de passe :</label><br>
+                    <input type="password" placeholder="Mot de passe" name="newPassword1"><br>
+                    <label>Confirmer mot de passe :</label><br>
+                    <input type="password" placeholder="Mot de passe" name="newPassword2"><br>
+                    <input type="submit" value="Modifier">
+                </form>
+            </div>
+            <div id="solde">
+                <h2>Votre solde</h2>
+                <label><%out.println(request.getSession().getAttribute("solde")+"€");%></label>
+                <form action="crediter" method="post">
+                    <label for="solde">Créditer solde</label><br>
+                    <input type="text" name="solde" placeholder="Actualiser solde"><br>
+                    <input type="submit" value="Créditer">
+                </form>
+            </div>
+        <div>
         <div id="achats">
             <h2>Historique des commandes</h2>
 
@@ -101,14 +103,14 @@
                     catch(SQLException e){
                         throw new RuntimeException(e);
                     }
-                    if(r.getCollection().get("edit").equals("1")){
-                        out.println("<a href=\"editRights.jsp\" id=\"editLink\">Modifiez les droits d'un utilisateur</a><br>");
+                    if(r.getCollection().get("edit").equals("1")||request.getSession().getAttribute("role").equals("1")){
+                        out.println("<a href=\"editRights.jsp\">Modifier les droits d'un utilisateur</a><br>");
                     }
-                    if(r.getCollection().get("promote").equals("1")){
-                        out.println("<a href=\"editAdmin.jsp\" id=\"editLink\">Ajoutez un admin</a><br>");
+                    if(r.getCollection().get("promote").equals("1")||request.getSession().getAttribute("role").equals("1")){
+                        out.println("<a href=\"editAdmin.jsp\">Ajouter un admin</a><br>");
                     }
-                    if(r.getCollection().get("add").equals("1")||r.getCollection().get("remove").equals("1")){
-                        out.println("<a href=\"editChamp.jsp\" id=\"editLink\">Ajoutez / Supprimez un champion</a><br>");
+                    if(r.getCollection().get("add").equals("1")||r.getCollection().get("remove").equals("1")||request.getSession().getAttribute("role").equals("1")){
+                        out.println("<a href=\"editChamp.jsp\">Ajouter / Supprimers un champion</a><br>");
                     }
                 %>
             </div>

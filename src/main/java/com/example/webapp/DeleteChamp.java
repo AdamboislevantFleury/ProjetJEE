@@ -29,6 +29,7 @@ public class DeleteChamp extends HttpServlet {
             ResultSet resultSet = null;
             resultSet = databaseUtils.sendQuery(query);
             out.println("champ supprimé");
+            databaseUtils.closeConnection();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

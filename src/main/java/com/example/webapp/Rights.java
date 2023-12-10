@@ -28,7 +28,6 @@ public class Rights {
     }
 
     public void setRights(String right,String value) throws SQLException {
-        collection.put(right,value);
         DatabaseUtils db = DatabaseUtils.getInstance();
         String query = "UPDATE "+db.getDatabase() +".permissions SET "+right+" = "+value+" WHERE id_user = "+collection.get("id_user");
         ResultSet rs = null;

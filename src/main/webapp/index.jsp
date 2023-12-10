@@ -48,8 +48,7 @@
           }
           db.closeConnection();
         %>
-              }
-            }%>
+
       </div>
 
       <%}%>

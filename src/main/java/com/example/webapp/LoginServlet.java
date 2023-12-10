@@ -44,10 +44,12 @@ public class LoginServlet extends HttpServlet {
                 String id = resultSet.getString("id");
                 String email= resultSet.getString("email");
                 String role = resultSet.getString("role");
+                int solde = Integer.parseInt(resultSet.getString("solde"));
                 req.getSession().setAttribute("id",id);
                 req.getSession().setAttribute("email",email);
                 req.getSession().setAttribute("logged", "true");
                 req.getSession().setAttribute("role",role);
+                req.getSession().setAttribute("solde",solde);
                 //Récupération des droits et inscription dans la classe Rights pour les utilisations sur le site
                 Rights r = Rights.getInstance(id);
                 r.affichage();

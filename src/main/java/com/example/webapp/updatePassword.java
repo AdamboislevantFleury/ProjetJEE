@@ -55,6 +55,7 @@ public class updatePassword extends HttpServlet {
                         request.getRequestDispatcher("/profile.jsp").forward(request, response);
                     }
                 }
+                databaseUtils.closeConnection();
             }
             catch(Exception e){
                 out.println(e.toString());

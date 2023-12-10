@@ -58,6 +58,7 @@ public class produitServlet extends HttpServlet {
                 championData.put("prix", resultSet.getString("prix"));
                 championData.put("titre", resultSet.getString("titre"));
                 championData.put("lane", resultSet.getString("lane"));
+                championData.put("splashart",resultSet.getString("splashart"));
 
                 championsList.put(resultSet.getString("name"), championData);
 

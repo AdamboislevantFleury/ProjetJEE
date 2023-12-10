@@ -18,10 +18,11 @@
   <title>Title</title>
   <link rel="stylesheet" href="style/index.css">
   <script>
+    const url = window.location.href.split("?")[0].split("/").slice(0,-1).join("/");
 
     function achat() {
       const xhr = new XMLHttpRequest();
-      xhr.open('GET', 'http://localhost:8080/WebApp_war/achat', true);
+      xhr.open('GET', url+'/achat', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.send();
 
@@ -40,7 +41,7 @@
 
     function addFunction(name) {
       const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://localhost:8080/WebApp_war/panier', true);
+        xhr.open('POST', url+'/panier', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.setRequestHeader('type', 'add');
         xhr.setRequestHeader('champName', name);
@@ -67,7 +68,7 @@
     }
     function minusFunction(name) {
       const xhr = new XMLHttpRequest();
-      xhr.open('POST', 'http://localhost:8080/WebApp_war/panier', true);
+      xhr.open('POST', url+'/panier', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.setRequestHeader('type', 'remove');
       xhr.setRequestHeader('champName', name);
@@ -94,7 +95,7 @@
     }
     function deleteFunction(name) {
       const xhr = new XMLHttpRequest();
-      xhr.open('POST', 'http://localhost:8080/WebApp_war/panier', true);
+      xhr.open('POST', '/panier', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.setRequestHeader('type', 'delete');
       xhr.setRequestHeader('champName', name);

@@ -9,6 +9,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="org.json.JSONObject" %>
+<%@ page import="com.example.webapp.DatabaseUtils" %>
+<%@ page import="com.example.webapp.Champions" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,11 +20,34 @@
 </head>
 <body>
 <video muted loop autoplay id="video-bg">
-  <source src="media/background.mp4" type="video/mp4" />
-  <img src="media/background-fallback.jpg" title="Your browser does not support the <video> tag" />
+    <source src="media/background.mp4" type="video/mp4" />
+    <img src="media/background-fallback.jpg" title="Your browser does not support the <video> tag" />
 </video>
 <div id="overlay">
     <jsp:include page="header.jsp" />
+    <main>
+
+            <%
+                DatabaseUtils db = new DatabaseUtils();
+                String selectedLane = request.getParameter("lane");
+
+                // Si la lane n'est pas sélectionnée, utilisez une valeur par défaut
+                if (selectedLane == null || selectedLane.isEmpty()) {
+                    selectedLane = "Top";
+                }
+
+                JSONObject championList = (JSONObject) request.getAttribute("champions");
+
+                int Product_id = 0;
+
+                for (String key : championList.keySet()) {
+                    JSONObject championData = Champions.getRandomChampionByLane(db, selectedLane);
+
+                    if (championData != null) {
+                        Product_id++;
+                    }
+                }
+            %>
 
     <%
         String CurrentSearch = (request.getParameter("search")!=null) ? request.getParameter("search") : "";
@@ -44,7 +69,6 @@
         </form>
     </div>
 
-    <main>
         <div class="container">
 
         <%
@@ -53,9 +77,9 @@
             // String champions = (String) response.getHeader("champions");
             //parse the json
             // JSONObject championList = new JSONObject(champions);
-            JSONObject championList = (JSONObject)request.getAttribute("champions");
+            championList = (JSONObject) request.getAttribute("champions");
 
-            int Product_id = 0;
+            Product_id = 0;
 
             //print each key and value
             for (String key : championList.keySet()) {

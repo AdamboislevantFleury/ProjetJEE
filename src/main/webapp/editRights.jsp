@@ -12,11 +12,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/styles.css" type="text/css">
+    <link rel="stylesheet" href="style/editPages.css" type="text/css">
     <title>Modifiez les droits d'un utilisateur</title>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-
+<div id="container">
 <legend>Modifier les droits d'un utilisateur</legend>
 <form action="editRights" method="post">
 
@@ -24,15 +25,6 @@
     <label for="addRights">Ajouter des droits</label><br>
     <input type="radio" value="remove" name="rights" id="removeRights"/>
     <label for="removeRights">Retirer des droits</label><br>
-    <input type="checkbox" id="add" name="val" value="add"/>
-    <label for="add">Ajouter un champion</label><br>
-    <input type="checkbox" id="remove" name="val" value="remove"/>
-    <label for="remove">Retirer un champion</label><br>
-    <input type="checkbox" id="edit" name="val" value="edit"/>
-    <label for="edit">Modifier les droits d'un utilisateur</label><br>
-    <input type="checkbox" id="promote" name="val" value="promote"/>
-    <label for="promote">Passer un utilisateur en admin</label><br>
-    Choisissez un utilisateur :<br>
     <select name = "user">
         <%
             UserList users = new UserList();
@@ -43,6 +35,14 @@
             }
         %>
     </select><br>
+    <input type="checkbox" id="add" name="val" value="add"/>
+    <label for="add">Ajouter un champion</label><br>
+    <input type="checkbox" id="remove" name="val" value="remove"/>
+    <label for="remove">Retirer un champion</label><br>
+    <input type="checkbox" id="edit" name="val" value="edit"/>
+    <label for="edit">Modifier les droits d'un utilisateur</label><br>
+    <input type="checkbox" id="promote" name="val" value="promote"/>
+    <label for="promote">Passer un utilisateur en admin</label><br>
     <input type="submit" value="Modifier">
 </form>
 </div>

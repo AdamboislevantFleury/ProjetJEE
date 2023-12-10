@@ -44,6 +44,10 @@
         </a>
 
         <%
+            }
+          }
+          db.closeConnection();
+        %>
               }
             }%>
       </div>

@@ -6,7 +6,7 @@
   Time: 15:14
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 
 <%
 
@@ -28,6 +28,8 @@
     <style>
         body{
             background-image: url(<% out.print(rs.getString("splashart")); %>);
+            background-size: cover;
+            background-position: right;
     }
     </style>
     <script>
@@ -44,7 +46,7 @@
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     //redirect to panier
-                    window.location.href = url+"/panier.jsp";
+                    window.location.href = url+"/panier";
                 }
             };
 
@@ -64,7 +66,7 @@
     </div>
         <button class="btn" onclick="addpanier('<% out.print(rs.getString("name"));%>')"><span>Acheter</span></button>
 </div>
-
+<% db.closeConnection();%>
 
 <jsp:include page="footer.jsp"/>
 </body>

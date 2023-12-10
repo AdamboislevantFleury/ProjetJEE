@@ -15,7 +15,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="style/index.css">
+    <%-- <link rel="stylesheet" href="style/index.css"> --%>
     <link rel="stylesheet" href="style/produit.css">
 </head>
 <body>

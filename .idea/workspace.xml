@@ -219,10 +219,14 @@
       <workItem from="1700054961043" duration="1278000" />
       <workItem from="1700058446672" duration="1560000" />
       <workItem from="1700143403382" duration="6926000" />
-      <workItem from="1700388220757" duration="10636000" />
-      <workItem from="1702134745550" duration="1330000" />
-      <workItem from="1702136384934" duration="1602000" />
-      <workItem from="1702138009106" duration="2283000" />
+      <workItem from="1700418884894" duration="6867000" />
+      <workItem from="1700579010924" duration="1043000" />
+      <workItem from="1700735588771" duration="8802000" />
+      <workItem from="1701276607395" duration="762000" />
+      <workItem from="1701342375722" duration="8071000" />
+      <workItem from="1701781155423" duration="843000" />
+      <workItem from="1701782216362" duration="13660000" />
+      <workItem from="1701938597005" duration="21425000" />
     </task>
     <task id="LOCAL-00001" summary="push pour merge">
       <option name="closed" value="true" />
@@ -248,7 +252,55 @@
       <option name="project" value="LOCAL" />
       <updated>1700319327326</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00006" summary="update">
+      <option name="closed" value="true" />
+      <created>1701782457787</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701782457787</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update">
+      <option name="closed" value="true" />
+      <created>1701782872806</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701782872806</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update">
+      <option name="closed" value="true" />
+      <created>1701782891471</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701782891471</updated>
+    </task>
+    <task id="LOCAL-00009" summary="updating CSS + polyvalence des liens">
+      <option name="closed" value="true" />
+      <created>1701972624243</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701972624243</updated>
+    </task>
+    <task id="LOCAL-00010" summary="problème double page produit réglé">
+      <option name="closed" value="true" />
+      <created>1702043781303</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1702043781303</updated>
+    </task>
+    <task id="LOCAL-00011" summary="nouveau background article + fermeture des connexions à la DB">
+      <option name="closed" value="true" />
+      <created>1702135847922</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1702135847922</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +318,14 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="amélioration de l'inde" />
+    <MESSAGE value="randomisation des personnages de la page d'accueil en fonction de leur lane" />
+    <MESSAGE value="page produit" />
+    <MESSAGE value="update" />
+    <MESSAGE value="updating CSS + polyvalence des liens" />
+    <MESSAGE value="problème double page produit réglé" />
+    <MESSAGE value="nouveau background article + fermeture des connexions à la DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="nouveau background article + fermeture des connexions à la DB" />
     <MESSAGE value="push pour merge" />
     <MESSAGE value="gestion du panier, possiblité d'ajouter des article&#10;&#10;TODO : enlever des article, modifier les quantités" />
     <MESSAGE value="ajout bonton +/- 1 et supprimer dans le panier, ça bug encore" />

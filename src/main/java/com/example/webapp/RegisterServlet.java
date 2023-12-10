@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.sql.ResultSet;
 
@@ -43,6 +44,13 @@ public class RegisterServlet extends HttpServlet {
             }
 
             databaseUtils.sendQuery(insertQuery);
+
+            //if no error, send email
+            String subject = "Welcome to the League of Legends shop";
+            String content = "Welcome to the League of Legends shop, " + name + " " + firstname + " !";
+
+            MailUtils.sendMail(subject, content, username);
+
             databaseUtils.closeConnection();
             req.getSession().setAttribute("logged", "false");
         } catch (Exception e) {

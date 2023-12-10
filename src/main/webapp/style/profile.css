@@ -77,6 +77,7 @@ input[type=email]:focus,input[type=password]:focus,input[type=text]:focus{
 }
 
 form input[type=submit]{
+    align-content: center;
     height:25px;
     width: 70px;
     background-color: white;
@@ -131,4 +132,27 @@ table{
     top:0;
     margin-right: 5%;
     margin-top:10%;
+}
+
+a{
+    font-family: Arial sans-serif;
+    font-size:1.25rem;
+    color:#d0a85c;
+    text-decoration: none;
+}
+
+a:visited{
+    color:#d0a85c;
+}
+
+a:hover{
+    color:#199bb9;
+}
+
+label{
+    font-size: 1.25rem;
+}
+
+#solde{
+    margin-top:75px;
 }

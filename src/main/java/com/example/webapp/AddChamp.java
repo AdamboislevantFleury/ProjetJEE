@@ -33,6 +33,7 @@ public class AddChamp extends HttpServlet {
             String query = "INSERT INTO "+databaseUtils.getDatabase()+".champions VALUES ('" + id+ "', '"+ name + "', '" + type + "', '" + image + "', '" + splash + "', '" + title + "', '" + price + "', '" + lane + "', '" + descr +"')";
             ResultSet resultSet = null;
             resultSet = databaseUtils.sendQuery(query);
+            databaseUtils.closeConnection();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

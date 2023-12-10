@@ -1,0 +1,61 @@
+body{
+    height:1080px;
+    width:auto;
+    background-image: url("https://www.tribe.games/wp-content/uploads/2023/03/LOL-2022-KEY-ART.webp");
+    font-family: Arial, sans-serif;
+}
+
+#container{
+    background-color: black;
+    color:white;
+    @font-face { font-family: FritzQuadrata; src: url('font/Friz Quadrata Regular.ttf'); }
+    font-family: FritzQuadrata;
+    font-size: 1.5rem;
+    margin-top: 7.5%;
+    margin-left:35%;
+    max-width:450px;
+    min-height: auto;
+    border-radius: 20px;
+    text-align:center;
+}
+
+input[type=password],input[type=text]{
+    margin-top: 5px;
+    height:40px;
+    width:300px;
+    border-radius: 5px;
+}
+
+input[type=password]:hover,input[type=text]:hover{
+    border: 3px solid #199bb9;
+}
+
+input[type=password]:focus,input[type=text]:focus{
+    outline: none;
+    border: 3px solid #199bb9;
+}
+
+form{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form input[type=submit]{
+    height:35px;
+    width: 100px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+form input[type=submit]:hover{
+    border-color: #199bb9;
+    outline: none;
+    background-color: #199bb9;
+}
+
+select{
+    margin-top: 5px;
+    height:40px;
+    width:300px;
+    border-radius: 5px;
+}

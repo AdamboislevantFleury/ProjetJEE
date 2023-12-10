@@ -26,6 +26,7 @@ public class editAdmin extends HttpServlet {
         ResultSet r = null;
         try {
             r = db.sendQuery(query);
+            db.closeConnection();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

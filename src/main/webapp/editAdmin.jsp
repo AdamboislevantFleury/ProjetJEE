@@ -11,26 +11,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/editPages.css" type="text/css">
     <link rel="stylesheet" href="style/styles.css" type="text/css">
     <title>Ajouter un admin</title>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-
-<form action ="editAdmin" method="post">
-    Choisissez un utilisateur à passer en admin :<br>
-    <select name = "user">
-        <%
-            UserList users = new UserList();
-            Iterator<String> it = users.getUserList().iterator();
-            while(it.hasNext()){
-                String email = it.next();
-                out.println("<option>"+email+"</option>");
-            }
-        %>
-    </select><br>
-    <input type="submit" value="Modifier">
-</form>
+<div id="container">
+    <form action ="editAdmin" method="post">
+        Choisissez un utilisateur à passer en admin :<br>
+        <select name = "user">
+            <%
+                UserList users = new UserList();
+                Iterator<String> it = users.getUserList().iterator();
+                while(it.hasNext()){
+                    String email = it.next();
+                    out.println("<option>"+email+"</option>");
+                }
+            %>
+        </select><br>
+        <input type="submit" value="Modifier">
+    </form>
+<div>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

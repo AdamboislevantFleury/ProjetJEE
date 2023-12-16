@@ -23,34 +23,22 @@ public class DeleteChamp extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String champ = req.getParameter("deletedChamp");
+        out.println(champ);
         try {
             DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
-            String query = "DELETE FROM "+databaseUtils.getDatabase()+".champions WHERE name = "+champ;
+            String delete = "SELECT * FROM "+databaseUtils.getDatabase()+".champions WHERE name = '"+champ+"'";
             ResultSet resultSet = null;
-            resultSet = databaseUtils.sendQuery(query);
-            out.println("champ supprimé");
-            databaseUtils.closeConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+            resultSet = databaseUtils.sendQuery(delete);
+            if(resultSet.next()){
+                String id = resultSet.getString("idChampions");
+                String query = "DELETE FROM "+databaseUtils.getDatabase()+".champions WHERE idChampions = '"+id+"'";
+                resultSet = databaseUtils.sendQuery(query);
+            }
 
-        /*
-        DatabaseUtils db = DatabaseUtils.getInstance();
-        //String query = "INSERT INTO "+db.getDatabase()+".permissions VALUES ("+req.getSession().getAttribute("id")+",0,0,0,0)";
-        String query = "SELECT * FROM "+db.getDatabase()+".permissions WHERE id_user = "+req.getSession().getAttribute("id");
-        try {
-            ResultSet rs = null;
-            rs = db.sendQuery(query);
-            if(rs.next()){
-                Rights r = Rights.getInstance((String) req.getSession().getAttribute("id"));
-                r.affichage();
-            }
-            else{
-                out.println("cacapipi");
-            }
+            databaseUtils.closeConnection();
+            req.getRequestDispatcher("index.jsp").forward(req,resp);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        */
     }
 }

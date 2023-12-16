@@ -10,14 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79ca6a87-53fc-414c-94e6-2dda46524c5b" name="Changes" comment="updating CSS + polyvalence des liens">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/MailUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_11_2023_18_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_11_2023_18_44__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/Champions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/Champions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/DeleteChamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/DeleteChamp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/editChamp.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editChamp.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +79,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Tomcat Server.Tomcat 10.1.15.executor&quot;: &quot;Run&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;antoine&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;H:/EISTI/Ing2/JEE/Projet/src/main/webapp/style&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -110,7 +108,8 @@
   <component name="RunManager">
     <configuration name="Tomcat 10.1.15" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.15" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WebApp_war/index.jsp" />
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="WebApp:war">
           <settings>
@@ -227,6 +226,23 @@
       <workItem from="1701781155423" duration="843000" />
       <workItem from="1701782216362" duration="13660000" />
       <workItem from="1701938597005" duration="21425000" />
+      <workItem from="1702230236560" duration="1320000" />
+      <workItem from="1702293869264" duration="204000" />
+      <workItem from="1702470822861" duration="114000" />
+      <workItem from="1702487435617" duration="791000" />
+      <workItem from="1702630770875" duration="106000" />
+      <workItem from="1702638539537" duration="27000" />
+      <workItem from="1702638583918" duration="6000" />
+      <workItem from="1702638602155" duration="96000" />
+      <workItem from="1702639340540" duration="9000" />
+      <workItem from="1702646885673" duration="95000" />
+      <workItem from="1702647058718" duration="32000" />
+      <workItem from="1702653732431" duration="13000" />
+      <workItem from="1702654168585" duration="9000" />
+      <workItem from="1702654186975" duration="11000" />
+      <workItem from="1702654351714" duration="11000" />
+      <workItem from="1702677038164" duration="2000" />
+      <workItem from="1702746020396" duration="1490000" />
     </task>
     <task id="LOCAL-00001" summary="push pour merge">
       <option name="closed" value="true" />
@@ -325,7 +341,6 @@
     <MESSAGE value="updating CSS + polyvalence des liens" />
     <MESSAGE value="problème double page produit réglé" />
     <MESSAGE value="nouveau background article + fermeture des connexions à la DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="nouveau background article + fermeture des connexions à la DB" />
     <MESSAGE value="push pour merge" />
     <MESSAGE value="gestion du panier, possiblité d'ajouter des article&#10;&#10;TODO : enlever des article, modifier les quantités" />
     <MESSAGE value="ajout bonton +/- 1 et supprimer dans le panier, ça bug encore" />

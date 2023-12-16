@@ -23,7 +23,7 @@
     <div id="remove">
             <p>Supprimer un champion</p>
             <form action="deleteChamp" method="post">
-                <select name = "user">
+                <select name = "deletedChamp">
                     <%
                         Champions champList = new Champions();
                         Iterator<String> it = champList.getChampList().iterator();

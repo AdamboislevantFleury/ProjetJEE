@@ -32,7 +32,7 @@ public class DeleteChamp extends HttpServlet {
             if(resultSet.next()){
                 String id = resultSet.getString("idChampions");
                 String query = "DELETE FROM "+databaseUtils.getDatabase()+".champions WHERE idChampions = '"+id+"'";
-                resultSet = databaseUtils.sendQuery(query);
+                databaseUtils.sendQuery(query);
             }
 
             databaseUtils.closeConnection();

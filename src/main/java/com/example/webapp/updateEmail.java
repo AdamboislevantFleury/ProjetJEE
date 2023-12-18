@@ -38,8 +38,7 @@ public class updateEmail extends HttpServlet {
                     String oldEmail = resultSet.getString("email");
                     if(!newEmail.equals(oldEmail)){
                         query = "UPDATE "+databaseUtils.getDatabase()+".user SET email = '" + newEmail + "' WHERE id = " + id;
-                        resultSet = null;
-                        resultSet = databaseUtils.sendQuery(query);
+                        databaseUtils.sendQuery(query);
                         request.getSession().setAttribute("logged", "false");
                         request.getRequestDispatcher("/connexion.jsp").forward(request, response);
                     }

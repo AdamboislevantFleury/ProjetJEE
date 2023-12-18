@@ -30,7 +30,7 @@ public class RegisterServlet extends HttpServlet {
         String firstname = req.getParameter("firstname");
 
         String checkQuery = "SELECT * FROM " + databaseUtils.getDatabase() + ".user WHERE email = '" + username + "'";
-        String insertQuery = "INSERT INTO " + databaseUtils.getDatabase() + ".user (email, password, nom, prenom) VALUES ('" + username + "', '" + password + "', '" + name + "', '" + firstname + "')";
+        String insertQuery = "INSERT INTO " + databaseUtils.getDatabase() + ".user (email, password, nom, prenom,role,solde) VALUES ('" + username + "', '" + password + "', '" + name + "', '" + firstname + "', 0,0)";
 
         //check for error
         try {
@@ -44,15 +44,24 @@ public class RegisterServlet extends HttpServlet {
             }
 
             databaseUtils.sendQuery(insertQuery);
-
+            String select = "SELECT * FROM "+databaseUtils.getDatabase()+".user WHERE email = '" + username + "'";
+            result=databaseUtils.sendQuery(select);
+            if(result.next()){
+                String id = result.getString("id");
+                String query = "INSERT INTO "+databaseUtils.getDatabase()+".permissions VALUES ('"+id+"',0,0,0,0)";
+                databaseUtils.sendQuery(query);
+            }
             //if no error, send email
             String subject = "Welcome to the League of Legends shop";
             String content = "Welcome to the League of Legends shop, " + name + " " + firstname + " !";
 
             MailUtils.sendMail(subject, content, username);
 
+
             databaseUtils.closeConnection();
             req.getSession().setAttribute("logged", "false");
+            req.getRequestDispatcher("/connexion.jsp").forward(req, resp);
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

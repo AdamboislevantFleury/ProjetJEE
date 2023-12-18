@@ -40,8 +40,7 @@ public class updatePassword extends HttpServlet {
                     if(newPassword1.equals(newPassword2)){
                         if(!newPassword1.equals(oldPassword)){
                             query = "UPDATE "+databaseUtils.getDatabase()+".user SET password = '" + newPassword1 + "' WHERE id = " + id;
-                            resultSet = null;
-                            resultSet = databaseUtils.sendQuery(query);
+                            databaseUtils.sendQuery(query);
                             request.getSession().setAttribute("logged", "false");
                             request.getRequestDispatcher("/connexion.jsp").forward(request, response);
                         }

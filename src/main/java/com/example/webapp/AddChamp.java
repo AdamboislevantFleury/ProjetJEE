@@ -30,13 +30,12 @@ public class AddChamp extends HttpServlet {
         String price = req.getParameter("price");
         try {
             DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
-            String query = "INSERT INTO "+databaseUtils.getDatabase()+".champions VALUES ('" + id+ "', '"+ name + "', '" + type + "', '" + image + "', '" + splash + "', '" + title + "', '" + price + "', '" + lane + "', '" + descr +"')";
-            ResultSet resultSet = null;
-            resultSet = databaseUtils.sendQuery(query);
+            String query = "INSERT INTO "+databaseUtils.getDatabase()+".champions VALUES ('" + id+ "', '"+ name + "', '" + type + "', '" + image + "', '" + splash + "', '" + title + "', '" + price + "', '" + lane + "', '" + descr +"', 50)";
+            databaseUtils.sendQuery(query);
             databaseUtils.closeConnection();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        req.getRequestDispatcher("/produit.jsp").forward(req, resp);
+        req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 }
